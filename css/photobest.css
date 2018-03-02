@@ -1,0 +1,51 @@
+﻿/*-------------------------------------------- 1. MAIN_PHOTO ------------------------------------------*/
+.photo_wrap{position:relative;text-align:left; background:#575758; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;  }
+.photo_wrap h3{position:relative;padding:0;height:38px;line-height:38px;padding-left:20px;font-size:16px;font-weight:bold;color:#fff;letter-spacing:0;border-bottom:solid 1px #3e3e3f;background:#49494a; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.photo_wrap #photo_link{ position: absolute; top:13px; right:20px;}
+.photo_wrap #photo_link > li{float:left;font-size:12px; margin-left:6px;padding-left:6px;background:url(http://img.sedaily.com/Html/Photo/view_date_line2.gif) left center no-repeat}
+.photo_wrap #photo_link > li:first-child{margin-left:0;padding-left:0;background:none}
+.photo_wrap #photo_link a { color:#999;}
+
+.photo_wrap .photo_cont_view .photo_cont .po360 { display: block; width:50px; height:55px; position: absolute;top:39%; left: 50%; margin-left:-25px; margin-top:-25px; z-index: 200;}
+
+.photo_wrap .photo_cont_list_l {width:100%; height: 1px; background:#636364;}
+.photo_wrap .photo_cont_list_w { width:100%; height:75px; border-bottom:1px solid #4a4a4b; }
+.photo_wrap .photo_cont_list_w .photo_cont_list { height:73px; margin:11px 0; position:relative; }
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_prev { width:27px; height:73px; position: absolute; top:-4px; left:0; z-index:100;}
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_next { width:27px; height:73px; position: absolute; top:-4px; right:0; z-index:100;}
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_cont_list_thum_img { width:100%; height:65px;}
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_cont_list_thum_img ul { width:1000px; height:100%; }
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_cont_list_thum_img ul li { width:65px; height:100%; float:left; position: relative; }
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_cont_list_thum_img ul li span{ width:100%; height:100%; position: absolute; top:0; left:0;}
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_cont_list_thum_img ul li:first-child { margin-left:20px;}
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_cont_list_thum_img ul li img{ width:100%; height:100%; }
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_cont_list_thum_img ul li.photo_choice { border:3px solid #fff; border:3px solid #fff; box-shadow: 3px 3px 6px #000; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; z-index: 50; }
+.photo_wrap .photo_cont_list_w .photo_cont_list .photo_cont_list_thum_img ul li.photo_choice span { display: none;}
+.thum_movie         {display:block; position:relative; width:100%; height:100%;}
+
+.photo_wrap .photo_cont_view .photo_cont2 { width:84%; height:37px; margin:5px auto}
+.photo_wrap .photo_cont_view .photo_cont2 > p { width:98%; font-weight:bold; line-height:30px; height:30px; text-align: center; white-space:nowrap; overflow:hidden; text-overflow: ellipsis; color: #cdcdcd; }
+.photo_wrap .photo_cont_view .photo_cont2 > p a { color:#cdcdcd; font-weight: normal; font-size:14px;}
+
+.photo_wrap .photo_cont_view { width:100%; height:257px; background-color:#575758; border-top:1px solid #636364; border-bottom:solid 1px #3e3e3f;}
+.photo_wrap .photo_cont_view .photo_cont { width:86%; height:80%; border-bottom:1px solid #636364; border-top:solid 1px #3e3e3f; border-left:solid 1px #3e3e3f; margin:8px auto 0 auto; overflow: hidden; position: relative;}
+.photo_wrap .photo_cont_view .photo_cont ul {width:1200%;}
+.photo_wrap .photo_cont_view .photo_cont ul li {width:8.3333%; float:left;}
+.photo_wrap .photo_cont_view .photo_cont a { display: block; width:100%; height:100%; }
+.thum_btn1, .thum_btn2 { display: block;  position: absolute;  }
+.photo_wrap .photo_cont_view .photo_cont .thum_btn1 { width:36px; height:36px; top:40%; left:3%;}
+.photo_wrap .photo_cont_view .photo_cont .thum_btn2 { width:36px; height:36px; top:40%; right: 3%;}
+.photo_wrap .photo_cont_view .photo_cont a img { width:100%; height:auto;}
+.thum_img_opacity:before {display:block; position:absolute; top:0; left:0; width:100%; height:100%; background:url(http://img.sedaily.com/Html/Photo/bk5.png); content:'';}
+
+/*.main_container .bottom_news .right_cont .today_cont .photo_wrap*/
+@media screen and (max-width:1024px){
+    .main_container .bottom_news .right_cont .today_cont .photo_wrap .photo_cont_view { height:242px; }
+}
+@media screen and (max-width:768px){
+    .main_container .bottom_news .right_cont .today_cont .photo_wrap .photo_cont_view { height:257px; }
+}
+@media screen and (max-width:480px){
+    .main_container .bottom_news .right_cont .today_cont .photo_wrap .photo_cont_view { height:auto;}
+}

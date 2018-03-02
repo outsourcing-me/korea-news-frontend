@@ -1,0 +1,199 @@
+/*
+newsman_onlymain은 홈페이지 메인 해드라인 또는 이벤트 영역 전용 스타일 시트입니다.
+코드의 재사용과 활용을 위해 별도 분리 하였습니다.
+
+**list**
+- 20161230 서경큐브 연재물 섹션추가
+- 20161184 추천 기자 추가 
+*/
+
+/* -----------------------  20170228 서경큐브 연재물 섹션추가 --------------------------*/
+
+.mainCube_wrap { width: 100%; margin-top:0px; position: relative;}
+.mainCube_wrap_m { display: none;}
+.mainCube_wrap * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
+.mainCube_wrap h3 {display: inline-block; height:25px; margin:30px auto 30px auto; position: relative;}
+.mainCube_wrap h3 a { font-size: 24px; color:#333; font-weight: bold; line-height: 25px; }
+.mainCube_wrap h3 a img { margin-top: 1px; margin-left: 8px; display:inline-block; width: 24px; height: 24px;}
+.mainCube_wrap h3 a span { color:#247acd; }
+.mainCube_wrap > div { width: 100%; height: 100px; overflow:hidden; }
+.mainCube_wrap ul { width: 100%; }
+.mainCube_wrap ul:after { display: block; content: ""; clear: both;}
+.mainCube_wrap .mainCube { width: 100%; height: 1000px; /*임시*/}
+.mainCube_wrap .mainCube li { height:100px; float:left; border:1px solid #d1d5d9; border-left: 0 none; width: 25%; }
+.mainCube_wrap .mainCube li:nth-child(4n+1) { border-left:1px solid #d1d5d9;}
+.mainCube_wrap .mainCube li a { display: block; width: 100%; height: 100%; position: relative; }
+.mainCube_wrap .mainCube li a:hover dl dt, .mainCube_wrap .mainCube li a:focus dl dt  { color:#247acd }
+.mainCube_wrap .mainCube li a:before { display: inline-block; width: 0; height: 100%; content: ""; vertical-align: middle;}
+.mainCube_wrap .mainCube li .cubeLeft_img { width:75px; height:75px; position: absolute; top:12px; left:10px; }
+.mainCube_wrap .mainCube li .cubeLeft_img > span { display: block; width:100%; height:100%; position: relative;}
+.mainCube_wrap .mainCube li .cubeLeft_img > span:after { display: block; content: ""; width: 95px; height: 98px; position: absolute; top:-12px; left:-10px; background: url("http://img.sedaily.com/Html/content/cube/cube_22.png") no-repeat; }
+.mainCube_wrap .mainCube li .cubeLeft_img > span span { display:inline-block; width: 25px; position: absolute; bottom:-3px; left:63px; font-size:11px; color:#247acd; z-index: 10; text-align: left}
+.mainCube_wrap .mainCube li .cubeLeft_img img { display:inline-block; width:100%; height:100%; vertical-align: middle; }
+.mainCube_wrap .mainCube li dl { display: inline-block; width: 100%; vertical-align: middle; border-left: 0 none; padding-right: 15px; padding-left: 100px; text-align: left;}
+.mainCube_wrap .mainCube li dl dt {  width: 100%; font-size: 16px; color:#333; font-weight: bold; white-space:nowrap; overflow:hidden; text-overflow: ellipsis;  }
+.mainCube_wrap .mainCube li dl dd {  width: 100%; font-size: 12px; line-height: 18px; max-height:36px; color:#666; margin-top:7px; overflow: hidden; 
+text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-wrap:break-word;  }
+
+.mainCube_wrap .mainCube_control { width: 33px; height: 100px; position: absolute; top:85px; right:-33px; border-top:1px solid #d1d5d9;}
+.mainCube_wrap .mainCube_control li { width: 100%; height: 33px; border-bottom:1px solid #d1d5d9; border-right:1px solid #d1d5d9;}
+.mainCube_wrap .mainCube_control li.cube_plus { background:#247acd; }
+.mainCube_wrap .mainCube_control li a { display: block; height: 100%; font-size: 0px; text-indent: -9999px;}
+.mainCube_wrap .mainCube_control li.cube_up a{ background: url("http://img.sedaily.com/Html/content/cube/cube_23.png") no-repeat; background-position: center}
+.mainCube_wrap .mainCube_control li.cube_down a{background: url("http://img.sedaily.com/Html/content/cube/cube_24.png") no-repeat; background-position: center}
+.mainCube_wrap .mainCube_control li.cube_up a:hover{ background: url("http://img.sedaily.com/Html/content/cube/cube_23_on.png") no-repeat; background-position: center}
+.mainCube_wrap .mainCube_control li.cube_down a:hover{background: url("http://img.sedaily.com/Html/content/cube/cube_24_on.png") no-repeat; background-position: center}
+.mainCube_wrap .mainCube_control li.cube_plus a {  background: url("http://img.sedaily.com/Html/content/cube/cube_25.png") no-repeat; background-position: center}
+
+@media screen and (max-width:1220px){ 
+    .mainCube_wrap > div { padding-right:33px; }
+    .mainCube_wrap .mainCube li { width: 25%}
+    .mainCube_wrap .mainCube_control { right:0;}
+}
+@media screen and (max-width:1024px){ 
+    .mainCube_wrap .mainCube li { width: 33.3333333%; }
+    .mainCube_wrap .mainCube li:nth-child(4n+1){border-left:0 none;}
+    .mainCube_wrap .mainCube li:nth-child(3n+1) { border-left:1px solid #d1d5d9;}
+}
+@media screen and (max-width:900px){ 
+    .mainCube_wrap { display: none;}
+    .mainCube_wrap_m { display: block; margin-bottom:0px; margin-top: 20px;}
+    .mainCube_wrap_m * { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
+    .mainCube_wrap_m h4 { width: 100%; height: 41px; padding: 0 5px; text-align: left; position: relative; border-bottom: 1px solid #d1d5d9; border-top: 1px solid #d1d5d9; }
+    .mainCube_wrap_m h4 a { display: block; height: 100%;}
+    .mainCube_wrap_m h4 .h4_text { display: block; width: 100%; height: 100%; }
+    .mainCube_wrap_m h4 span strong { font-size:20px; color:#333; font-weight: bold; line-height: 41px;}
+    .mainCube_wrap_m h4 span span { font-size: 13px; color:#9fa5ac; line-height: 41px; padding-left: 10px;}
+    .mainCube_wrap_m h4 .h4_arrow { display: block; width:20px; height: 100%; position: absolute; top:0; right: 0; background: url("http://img.sedaily.com/Html/content/cube/cube_26.png") no-repeat; background-position: center;  } 
+    
+    .mainCube_wrap_m > div { width: 100%; position: relative; border-bottom: 1px solid #d1d5d9; overflow: visible;}
+    .mainCube_wrap_m ul { width: 300%;/*임시*/ padding:15px 0; }
+    .mainCube_wrap_m ul:after { display: block; content: ""; clear: both;}
+    .mainCube_wrap_m ul li { width: 150px;/*임시*/ float:left; margin-right: 5px; border:1px solid #e1e1e2; background:#fff;}
+    .mainCube_wrap_m ul a {display: block; width: 100%; height: 100%;}
+    /*img*/
+    .mainCube_wrap_m ul .thumb { display: block; width: 100%; height:100%; border-bottom:1px solid #e1e1e1;}
+    .mainCube_wrap_m ul .thumb img { display: block; min-width: 100%;}
+    /*text */
+    .mainCube_wrap_m ul dl { width: 100%; padding:15px 10px; text-align: left; }
+    .mainCube_wrap_m ul dl dt { font-size: 15px; color:#333; font-weight: bold; margin-bottom: 8px; line-height: 18px;height:36px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-wrap:break-word;}
+    .mainCube_wrap_m ul dl dd { font-size: 12px; color:#666; line-height: 18px; height:36px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-wrap:break-word; margin-bottom: -2px;}
+}
+
+@media screen and (max-width:640px){
+    .mainCube_wrap_m { background: #e6e8eb; /*margin-bottom:-20px;*/ margin-top: 0;}
+    .mainCube_wrap_m ul { width: 300%;/*임시*/ padding:15px 10px; }
+    .mainCube_wrap_m h4 { border:0 none; padding: 0 10px;}
+    .mainCube_wrap_m h4 .h4_text { border-bottom: 1px solid #c7cbcf; }
+    .mainCube_wrap_m h4 span strong { font-size:18px;}
+    .mainCube_wrap_m h4 span span { padding-left:10px;}
+    .mainCube_wrap_m > div { border:0 none;}
+    .mainCube_wrap_m h4 .h4_arrow { width:40px; } 
+}
+
+
+/* -----------------------  20161184 추천 기자 --------------------------*/
+
+/*타이틀*/
+.hof_title {display: inline-block; height:auto; margin:30px auto 30px auto; position: relative;}
+.hof_title a { font-size: 24px; color:#333; font-weight: bold; }
+.hof_title a img { margin-top: 4px; margin-left: 8px; display:inline-block; width: 24px; height: 24px;}
+.hof_title span { color:#247acd; }
+.hof_wrap {  max-width: 1198px;  margin:0 auto; width:100%; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+/*버튼*/
+.hof_wrap > a{ display: block; z-index: 20; text-indent: -9999px; font-size: 0px;}
+.hof_wrap > a.usa_prev { width: 17px; height: 31px; position: absolute; top:50%; margin-top: -15px; left: -27px; background: url("http://img.sedaily.com/Html/common/arrow_left.png"); background-size: 17px 31px;}
+.hof_wrap > a.usa_prev:hover { background: url("http://img.sedaily.com/Html/common/arrow_left_on.png"); background-size: 17px 31px;}
+.hof_wrap > a.usa_next { width: 17px; height: 31px; position: absolute; top:50%; margin-top: -15px; right: -27px; background: url("http://img.sedaily.com/Html/common/arrow_right.png"); background-size: 17px 31px;}
+.hof_wrap > a.usa_next:hover { background: url("http://img.sedaily.com/Html/common/arrow_right_on.png"); background-size: 17px 31px;}
+/*li들*/
+.hof_wrap .hall_of_fame { width:100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; height: 100%; overflow: hidden; }
+.hof_wrap .hall_of_fame .hof_list { width: 100%; height:100%; position: relative;}
+.hof_wrap .hall_of_fame .hof_list:after{ content:""; display:block; clear:both; }
+.hof_wrap .hall_of_fame .hof_list li { display: block; width:20%; height: auto; float:left; text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.hof_wrap .hall_of_fame .hof_list li a { display: inline-block; width: 97%; height: auto; border:1px solid #e1e1e1; border-bottom:1px solid #bfc1c3; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+/*동그라미 이미지*/
+.hof_wrap .hall_of_fame .hof_list li a > div { width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 40px; position: relative;}
+.hof_wrap .hall_of_fame .hof_list li a > div:after { position: absolute; bottom:-4px; left: 0; width:100%; height:5px; display:block; content: ""; background: #fff;}/*아래 1픽셀 줄 생기는거 방지(크롬) */
+.hof_wrap .hall_of_fame .hof_list li a > div:before { position: absolute; top:0; right:36px; width:5px; height:100%; display:block; content: ""; background: #fff; z-index: 50;}/*오른쪽 1픽셀 줄 생기는거 방지(크롬) */
+.hof_wrap .hall_of_fame .hof_list li a > div span:after { position: absolute; top:0; left: 0; width: 100%; height:100%; display:block; content: ""; background: url("http://img.sedaily.com/Html/Content/newsman_18_2_2.png")no-repeat; background-size: 100%;}
+.hof_wrap .hall_of_fame .hof_list li a > div span { display: block; margin-top: 15px;position: relative; width: 100%; height: 0; overflow: hidden; padding-bottom: 100%; }
+.hof_wrap .hall_of_fame .hof_list li a > div span img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; overflow: hidden;}
+/*텍스트*/
+.hof_wrap .hall_of_fame .hof_list li a dl { width: 100%; height:122px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 20px; margin-top:10px;}
+.hof_wrap .hall_of_fame .hof_list li a dl dt{ width: 100%; height: 36px; border-top:1px solid #e6e8eb; border-bottom:1px solid #e6e8eb; background: #fafafa; line-height: 35px; font-size: 12px; color:#333;  }
+.hof_wrap .hall_of_fame .hof_list li a dl dt span { font-size: 15px; font-weight: bold; }
+.hof_wrap .hall_of_fame .hof_list li a dl dt img { display: inline-block; width: 24px; height: 24px; margin-top:6px; margin-left: 3px; }
+.hof_wrap .hall_of_fame .hof_list li a dl dd.hof_listcon2 { font-size: 12px; color:#888; height:3em; line-height:1.5em; text-align:left; overflow: hidden; 
+text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-wrap:break-word; margin-top:10px;}
+.hof_wrap .hall_of_fame .hof_list li a dl dd { font-size: 11px; color: #999; text-align: left; margin-top:8px;}
+.hof_wrap .hall_of_fame .hof_list li a dl dd span { color:#010101;  }
+.hof_wrap .hall_of_fame .hof_list li a dl dd img { margin-top:1px;}
+
+/*선임기자,논설위원일 경우*/
+.hof_wrap .hall_of_fame .hof_list li.editorialist a { background: #f3f3f3;}
+.hof_wrap .hall_of_fame .hof_list li.editorialist a dl { padding: 0; position: relative;}
+.hof_wrap .hall_of_fame .hof_list li.editorialist a dl:after { display: block; content:""; width:100%; height: 4px; position: absolute; top: 39px; left:0; background: url("http://img.sedaily.com/Html/Content/newsman_37.png") repeat-x; }
+.hof_wrap .hall_of_fame .hof_list li.editorialist a dl dt{ height: 39px; border:0 none; background: #247acd; line-height: 38px; color:#a9d5ff; position: relative;}
+.hof_wrap .hall_of_fame .hof_list li.editorialist a dl dt:after { display: block; content:""; width:5px; height: 45px; position: absolute; bottom: -4px; left:-3px; background: url("http://img.sedaily.com/Html/Content/newsman_35_333.png") no-repeat; }
+.hof_wrap .hall_of_fame .hof_list li.editorialist a dl dt:before { display: block; content:""; width:5px; height: 45px; position: absolute; bottom: -4px; right:-3px; background: url("http://img.sedaily.com/Html/Content/newsman_36_333.png") no-repeat; }
+.hof_wrap .hall_of_fame .hof_list li.editorialist a dl dd { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 20px; }
+.hof_wrap .hall_of_fame .hof_list li.editorialist a > div span:after { position: absolute; top:0; left: 0; width: 100%; height:100%; display:block; content: ""; background: url("http://img.sedaily.com/Html/Content/newsman_18_2_2_2.png")no-repeat; background-size: 100%;}
+.hof_wrap .hall_of_fame .hof_list li.editorialist a > div:after { position: absolute; bottom:-4px; left: 0; width:100%; height:5px; display:block; content: ""; background: #f3f3f3;}/*아래 1픽셀 줄 생기는거 방지(크롬) */
+.hof_wrap .hall_of_fame .hof_list li.editorialist a > div:before { position: absolute; top:0; right:37px; width:5px; height:100%; display:block; content: ""; background: #f3f3f3; z-index: 50;}/*오른쪽 1픽셀 줄 생기는거 방지(크롬) */
+.hof_wrap .hall_of_fame .hof_list li.editorialist a:hover dt { background:#1c5fa0; }
+.hof_wrap .hall_of_fame .hof_list li.editorialist a:hover dl dt:after { display: block; content:""; width:5px; height: 45px; position: absolute; bottom: -4px; left:-3px; background: url("http://img.sedaily.com/Html/Content/newsman_35_5.png") no-repeat; }
+.hof_wrap .hall_of_fame .hof_list li.editorialist a:hover dl dt:before { display: block; content:""; width:5px; height: 45px; position: absolute; bottom: -4px; right:-3px; background: url("http://img.sedaily.com/Html/Content/newsman_36_5.png") no-repeat; }
+
+
+@media screen and (max-width:1300px){ 
+.hof_wrap .hall_of_fame .hof_list li a dl dt img { display: none;}
+}
+@media screen and (max-width:1278px){    
+.hof_wrap { padding-right: 27px; padding-left: 27px; }  
+.hof_wrap > a.usa_prev{ left:0; } 
+.hof_wrap > a.usa_next{ right:0; }    
+}
+@media screen and (max-width:1190px){        
+.hof_wrap .hall_of_fame .hof_list li a dl dt img { display: none; } 
+}
+@media screen and (max-width:1120px){   
+.hof_wrap .hall_of_fame .hof_list li { width:25%; }
+.hof_wrap .hall_of_fame .hof_list li a dl dt{ font-size: 11px; }    
+}
+@media screen and (max-width:900px){   
+.hof_title {height:auto; margin:20px auto 10px auto; font-size: 22px;  padding-top:0; line-height: normal;}
+.hof_title a {font-size: 22px; line-height: normal;} 
+.hof_wrap { display: block; width: 100%; position: relative; margin-bottom:10px; margin-top:10px; padding-right: 0px; padding-left: 0px; }      
+.hof_wrap > a{ display: none; } 
+/*160(+6)x218*/
+.hof_wrap .hall_of_fame { width:100%; height: 236px; padding-bottom: 0; overflow:visible}   
+.hof_wrap .hall_of_fame .hof_list { position: absolute; top: 0; /*left: 6px;*/ left:0;}    
+.hof_wrap .hall_of_fame .hof_list li { width:166px; height:100%; margin-bottom:0; }    
+.hof_wrap .hall_of_fame .hof_list li a { display: block; width:160px; height: 100%; padding: 0; }    
+/*동그라미 이미지*/    
+.hof_wrap .hall_of_fame .hof_list li a > div { padding: 0 25px; }       
+.hof_wrap .hall_of_fame .hof_list li a > div:before { right:21px;}/*오른쪽 1픽셀 줄 생기는거 방지(크롬) */    
+.hof_wrap .hall_of_fame .hof_list li.editorialist a > div:before { right:21px;}/*오른쪽 1픽셀 줄 생기는거 방지(크롬) */    
+.hof_wrap .hall_of_fame .hof_list li a > div span { margin-top: 10px;}     
+/*텍스트*/
+.hof_wrap .hall_of_fame .hof_list li a dl { height:105px; padding: 0 10px; }
+.hof_wrap .hall_of_fame .hof_list li a dl dt{ font-size: 11px; height: 36px; line-height: 15px;}
+.hof_wrap .hall_of_fame .hof_list li a dl dt span { font-size: 13px; font-weight: normal; display: block; margin-top:4px; }
+.hof_wrap .hall_of_fame .hof_list li a dl dd.hof_listcon2 { height:2.6em; line-height:1.3em; margin-top:7px;}
+.hof_wrap .hall_of_fame .hof_list li a dl dd {  margin-top:3px;}   
+.hof_wrap .hall_of_fame .hof_list li.editorialist a dl dt { line-height: inherit; }
+.hof_wrap .hall_of_fame .hof_list li.editorialist a dl dt span{ line-height: inherit; color:#fff; padding-top: 5px;}
+.hof_wrap .hall_of_fame .hof_list li.editorialist a:hover dt { background:#247acd; }
+.hof_wrap .hall_of_fame .hof_list li.editorialist a:hover dl dt:after { display: block; content:""; width:5px; height: 45px; position: absolute; bottom: -4px; left:-3px; background: url("http://img.sedaily.com/Html/Content/newsman_35_333.png") no-repeat; }
+.hof_wrap .hall_of_fame .hof_list li.editorialist a:hover dl dt:before { display: block; content:""; width:5px; height: 45px; position: absolute; bottom: -4px; right:-3px; background: url("http://img.sedaily.com/Html/Content/newsman_36_333.png") no-repeat; }    
+.hof_wrap .hall_of_fame .hof_list li.editorialist a dl dd { padding: 0 10px; }    
+}
+@media screen and (max-width:640px){    
+.hof_title { display: block; margin:0 auto 15px auto; text-align: center; padding-top:15px; font-size: 16px; }
+.hof_title a { color:#000; font-weight: bold; letter-spacing: 0px; font-size: 16px; }
+.hof_title span { color:#247acd; }   
+.hof_title a img { display: none;}   
+.hof_wrap .hall_of_fame .hof_list {left: 6px;}  
+}
+

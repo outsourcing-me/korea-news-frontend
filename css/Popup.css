@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+
+/* 2016_12_12_ newsman popup */
+.layer_bg2 { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #222; display: none; z-index: 999; zoom: 1; *z-index: -1; opacity: 0.7; filter: alpha(opacity:'70'); }
+.newsman_popup {position: fixed; top:50%; left: 50%; width:400px; margin-left: -200px; height: 326px; margin-top: -163px; background: #fff; z-index:999; box-shadow: 1px 2px 2px #333; border:1px solid #484848; }
+.newsman_popup > div { position: relative; width: 100%; height:100%;}
+.newsman_popup .nlp_head { width:100%; height: 46px; border:1px solid #636363; border-bottom: 0 none; background: url("http://img.sedaily.com/Html/newsletter/newsletter_35.jpg"); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; } 
+.newsman_popup .nlp_head h2 { width:100%; height: 46px; line-height: 45px; font-size: 14px; color: #d8d8d8; font-weight: bold; letter-spacing: 0; text-align: left; padding-left: 20px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: relative}
+.newsman_popup .nlp_head a { display:block; height: 46px; width: 45px; position: absolute; top:0; right:0; }
+.newsman_popup .nlp_head a img { display: inline-block; width: 15px; height: 15px; margin-top:16px;}
+.newsman_popup .nlp_con { padding: 20px 20px 0 20px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border-left: 1px solid #dadada; border-right: 1px solid #dadada; border-top:1px solid #393939; width: 100%; height:276px; background: #fff; }
+.newsman_popup .nlp_con p { margin-bottom:20px; text-align: left;}
+.newsman_popup .nlp_con p span { display: block; line-height: 18px; font-size: 13px; letter-spacing:-0.5px;}
+.newsman_popup .nlp_con p span .nlp_underline { display: inline; text-decoration: underline; color:#000; font-weight: bold;}
+.newsman_popup .nlp_con p span .nlp_answ_con { color:#247acd; letter-spacing: 0; }
+.newsman_popup .nlp_con p span .nlp_answ_dec { color:#000; letter-spacing: 0;}
+/*버튼*/
+.newsman_popup .nlp_bottom { position: absolute; bottom: 0; left: 0; width:100%; height: 67px; background: #f0f0f0; border:1px solid #dadada; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.newsman_popup .nlp_bottom div { width:233px; height:34px; margin:16px auto 0 auto; text-align: center}
+.newsman_popup .nlp_bottom a { display:block; height: 34px; width:114px; float:left; color:#fff; letter-spacing: 0; line-height: 33px; }
+.newsman_popup .nlp_bottom a.nlp_bottom1 { background: #247acd; margin-right: 5px; }
+.newsman_popup .nlp_bottom a.nlp_bottom2 { background: #8c8c8c; }
+@media screen and (max-width:900px){ 
+    .newsman_popup { width:100%; height:100%; top:0; left:0; margin:0; overflow-y: hidden; }    
+}
+
+
+/* 2016_10_17_ newsletter layer popup */
+.layer_bg2 { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: #222; display: none; z-index: 999; zoom: 1; *z-index: -1; opacity: 0.7; filter: alpha(opacity:'70'); }
+.newsletter_popup {position: fixed; top:50%; left: 50%; width:600px; margin-left: -300px; height: 326px; margin-top: -163px; background: #fff; z-index:999; box-shadow: 1px 2px 2px #333; border:1px solid #484848; }
+.newsletter_popup > div { position: relative; width: 100%; height:100%;}
+
+.newsletter_popup .nlp_head { width:100%; height: 46px; border:1px solid #636363; border-bottom: 0 none; background: url("http://img.sedaily.com/Html/newsletter/newsletter_35.jpg"); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; } 
+.newsletter_popup .nlp_head h2 { width:100%; height: 46px; line-height: 45px; font-size: 14px; color: #d8d8d8; font-weight: bold; letter-spacing: 0; text-align: left; padding-left: 20px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.newsletter_popup .nlp_con { padding: 20px 20px 0 20px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border-left: 1px solid #dadada; border-right: 1px solid #dadada; border-top:1px solid #393939; width: 100%; height:276px; background: #fff; }
+.newsletter_popup .nlp_con p { margin-bottom:20px; text-align: left;}
+.newsletter_popup .nlp_con p span { display: block; line-height: 18px; font-size: 13px; letter-spacing:-0.5px;}
+.newsletter_popup .nlp_con p span .nlp_underline { display: inline; text-decoration: underline; color:#000; font-weight: bold;}
+.newsletter_popup .nlp_con p span .nlp_answ_con { color:#247acd; letter-spacing: 0; }
+.newsletter_popup .nlp_con p span .nlp_answ_dec { color:#000; letter-spacing: 0;}
+
+/*버튼2개*/
+.newsletter_popup .nlp_bottom { position: absolute; bottom: 0; left: 0; width:100%; height: 67px; background: #f0f0f0; border:1px solid #dadada; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+.newsletter_popup .nlp_bottom div { width:233px; height:34px; margin:16px auto 0 auto; text-align: center}
+.newsletter_popup .nlp_bottom a { display:block; height: 34px; width:114px; float:left; color:#fff; letter-spacing: 0; line-height: 33px; }
+.newsletter_popup .nlp_bottom a.nlp_bottom1 { background: #247acd; margin-right: 5px; }
+.newsletter_popup .nlp_bottom a.nlp_bottom2 { background: #8c8c8c; }
+
+/*버튼1개*/
+.newsletter_popup .nlp_bottom .nlp_bottom2 a { display:block; height: 100%; width:100%; float:left; color:#fff; letter-spacing: 0; line-height: 33px; }
+.newsletter_popup .nlp_bottom .nlp_bottom2 a.nlp_bottom3 { background: #247acd; }
+
+@media screen and (max-width:900px){ 
+    .newsletter_popup { width:100%; height:100%; top:0; left:0; margin:0; overflow-y: hidden; }    
+}
+
+
+/*  2016_05_03_ golf popup  */
+.golf_click_zone { width:900px; background:url("http://img.sedaily.com/Html/golf/golf_3.png") repeat-y center; margin:0 auto;}
+.golf_map { width:900px; margin:0 auto;}
+.golf_zone1 { height:810px; }
+.golf_zone2 { height:365px; }
+.golf_zone3 { height:390px; }
+.golf_zone4 { height:540px; }
+.golf_zone5 { height:340px; }
+.golf_zone6 { height:265px; }
+
+.golf_zone10 { height:310px; }
+.golf_zone10 > div { width:760px; height:310px; margin:0 auto; background-color:#f2f2f2; border-radius:10px; position: relative; text-align: left;}
+.golf_zone10 div p{ width:720px; margin:0 auto; padding-top:16px;}
+.golf_zone10 div .golf_zone10_info1 { position: absolute; top:21px; left:135px; width:300px;}
+.golf_zone10 div .golf_zone10_info2 { color:#7d7156; height:15px; margin:8px auto;}
+.golf_zone10 div .golf_zone10_info2 input { vertical-align: middle;}
+.golf_zone10 div .golf_zone10_info2 .info_under{ display: inline; font-weight: bold; text-decoration: underline;}
+.golf_zone10 div .golf_zone10_info3 {color:#444; margin-top:10px; }
+.golf_zone10 div .info32 { padding-top:5px; font-weight: bold }
+.golf_zone10 div ul { width:690px; height:35px; margin:15px auto 0 auto;}
+.golf_zone10 div ul li {float: left; color:#7d7156; letter-spacing: 2px;}
+.golf_zone10 div ul li#golf_zone10_name { width:35%; }
+.golf_zone10 div ul li#golf_zone10_mail { width:65%; } 
+.golf_zone10 div ul li#golf_zone10_mail input { width:300px;}
+.golf_zone10 div ul li input { vertical-align: middle;  }
+.golf_zone10 div span { display: block; width:690px; margin:0 auto;}
+.golf_zone10 div #info_box { border-radius: 0; width:670px; background:#fff; height:60px; overflow-y:scroll; border:1px solid #ced2d7; margin:5px auto 10px auto;}
+.golf_click_zone p { width:740px; height:30px; margin:0 auto; text-align:left; font-size: 18px; font-weight: bold; color:#444; border-bottom:1px solid #ced2d7; }
+.golf_click_zone #GG { width:740px; margin:0 auto; padding:20px 0; }
+.golf_click_zone #GG li {width:25%; height: 25px; float:left; text-align: left; font-size:12px; letter-spacing: -1px}
+.golf_click_zone #GG li input { margin-right:3px; vertical-align: middle;}
+#golf_button { width:900px; height:89px; margin:0 auto;}
+#golf_button p { float:left; height: 100%;}
+
+
+/*  open event popup  */	
+#popWrap{ width:400px; height:520px; position:fixed; top:12%; left:100px; z-index: 3000; border:1px solid lightgray; }
+#popWrap .popdesc { width:400px; height:495px; }
+#popWrap .popdesc a { width:400px; height:495px; }
+#popWrap .popdesc img { width:100%; height:100%;  }
+#popWrap #todayclose{ width:100%; height:25px; background-color:#38bbf1; position: relative;}
+#popWrap #todayclose .todayclose1 { width:200px; height:25px; position: absolute; top:0; left:0; font-size: 12px; color:#3e515f; line-height: 22px; display: block;}
+#popWrap #todayclose .todayclose1 label{vertical-align:2px} 
+#popWrap #todayclose .todayclose2 { width:60px; position: absolute; top:2px; right:5px;}
+#popWrap #todayclose .todayclose2 a img { vertical-align: middle; margin-left:5px}
+#popWrap #todayclose .todayclose2 a:link, #popWrap  #todayclose .todayclose2 a:visited { color:#3e515f; font-size: 13px;}
+#popWrap #todayclose .todayclose2 a:hover, #popWrap  #todayclose .todayclose2 a:focus { color:#fff;}
+
+
+#popWrap2{ width:400px; height:520px; position:fixed; top:12%; left:520px; z-index: 3000; border:1px solid lightgray; }
+#popWrap2 .popdesc2 { width:400px; height:495px; }
+#popWrap2 .popdesc2 a { width:400px; height:495px; }
+#popWrap2 .popdesc2 img { width:100%; height:100%;  }
+#popWrap2 #todayclose{ width:100%; height:25px; background-color:lightgray; position: relative;}
+#popWrap2 #todayclose .todayclose1 { width:170px; height:25px; position: absolute; top:0; left:0; font-size: 12px; color:#3e515f; line-height: 22px; display: block;}
+#popWrap2 #todayclose .todayclose1 label{vertical-align:2px} 
+#popWrap2 #todayclose .todayclose2 { width:60px; position: absolute; top:2px; right:5px;}
+#popWrap2 #todayclose .todayclose2 a img { vertical-align: middle; margin-left:5px}
+#popWrap2 #todayclose .todayclose2 a:link, #popWrap  #todayclose .todayclose2 a:visited { color:#3e515f; font-size: 13px;}
+#popWrap2 #todayclose .todayclose2 a:hover, #popWrap  #todayclose .todayclose2 a:focus { color:#fff;}
+
+
+@media screen and (max-width:900px){ 
+    #popWrap{ display: none;} 
+    #popWrap2{ width:300px; height: 396.25px; left:8%;} 
+    #popWrap2 .popdesc2 { width:300px; height:auto; }
+}
+@media screen and (max-width:480px){ 
+    #popWrap2{ width:250px; height: 334px; left:8%;} 
+    #popWrap2 .popdesc2 { width:250px; height:auto; }
+    #popWrap2 #todayclose .todayclose1 { width:162px; font-size:11px; }
+}

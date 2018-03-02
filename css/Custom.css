@@ -1,0 +1,51 @@
+﻿/* 개발자 추가 CSS */
+
+
+.db {
+	display:block;
+}
+
+.dn {
+	display:none;
+}
+
+/* contents */
+#container_pop{padding-top:5px;}
+
+/**/
+.section_cover_pop{margin-top:0; margin-bottom:10px;}
+.section_cover_pop .right_cont{position:absolute;right:0;top:0;}
+.section_cover_pop .title_wrap{position:relative;height:30px;margin-bottom:5px;}
+.section_cover_pop .title_wrap h2{text-align:left;font-size:18px;font-weight:bold;line-height:26px;color:#444;}
+
+/*영문모드로 자동 전환 오직 영문만 입력가능 (한/영 전환 불가능) IE*/
+.eng {
+	ime-mode: disabled;
+}
+
+/*한글모드로 자동 전환 (한/영 전환가능) IE*/
+.kor {
+	ime-mode: active;
+}
+
+/*영문모드로 자동 전환 (한/영 전환가능) IE*/
+.engkor {
+	ime-mode: inactive;
+}
+
+.list_search .txt {
+	float: left;
+	padding-left: 5px;
+	padding-top: 7px;
+	padding-right: 7px;
+}
+
+/*달력 input 기본 넓이*/
+.input_calendar {
+	width: 70px;
+	cursor: pointer;
+}
+
+.pointer {
+	cursor:pointer;
+}

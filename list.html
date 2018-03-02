@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>문화 · 스포츠 &gt; 라이프 : 서울경제</title>
+  <meta name="Author" content="문화 · 스포츠 &gt; 라이프 : 서울경제">
+  <meta name="Keywords" content="문화 · 스포츠 &gt; 라이프 : 서울경제">
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://img.sedaily.com/Html/Common/sed.ico">
+  <link rel="icon" href="http://img.sedaily.com/Html/Common/sed.ico" type="image/x-icon">
+
+
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+
+  <meta name="title" content="문화 · 스포츠 &gt; 라이프 : 서울경제">
+  <meta name="description" content="문화 · 스포츠 &gt; 라이프 : 서울경제">
+  <meta property="og:image" content="http://img.sedaily.com/web/common/facebookblank.jpg">
+
+  <link href="./css/style.css" rel="stylesheet">
+
+  <link href="./css/GoogleFont.css" rel="stylesheet" media="all">
+  <link href="./css/Base.css" rel="stylesheet" media="all">
+  <link href="./css/common.css" rel="stylesheet" media="all">
+  <link href="./css/Content.css" rel="stylesheet" media="all">
+  <link href="./css/Content02.css" rel="stylesheet" media="all">
+  <link href="./css/Custom.css" rel="stylesheet" media="all">
+  <link href="./css/Swiper.css" rel="stylesheet" media="all">
+  <link href="./css/Popup.css" rel="stylesheet" media="all">
+
+  <link href="./css/style1.css" rel="stylesheet">
+
+  <script async="" src="./js/analytics.js"></script>
+  <script src="./js/ca-pub-3417958662512297.js"></script>
+  <script async="" charset="utf-8" src="./js/plugin.min.js"></script>
+  <script src="./js/common.js"></script>
+
+
+  <!--[if lt IE 9]>
+	<script type="text/javascript" src="/Inc/Js/respond.min.js"></script>
+	<script src="/Inc/Js/html5.js"></script>
+    <script src="/Inc/Js/IE9.js"></script>
+<![endif]-->
+
+
+  <script src="./js/dable.js"></script>
+
+
+  <script type="text/javascript">
+  var NClass = "GH01";
+  //impeachment1125
+  </script>
+
+  <script async="" src="./js/adsbygoogle.js"></script>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3417958662512297",
+    enable_page_level_ads: true
+  });
+  </script>
+<!--   <link rel="preload" href="./js/integrator.js" as="script">
+  <script type="text/javascript" src="./js/integrator.js"></script>
+  <link rel="preload" href="./js/integrator(1).js" as="script">
+  <script type="text/javascript" src="./js/integrator(1).js"></script>
+ -->  <style id="style-1-cropbar-clipper">
+  /* Copyright 2014 Evernote Corporation. All rights reserved. */
+
+  .en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255, 255, 255, .38) solid !important;
+    border-radius: 4px !important;
+  }
+
+  .en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+  }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="NewsLetterPopAjax"></div>
+
+
+  <!--impeachment1125-->
+  <!--
+
+	<div id="inpeach_pop" align="center" style="">
+		<div>
+			<a href="/Special/Impeach">
+
+				<a href="#" class="inpeach_pop_close"><img src="http://img.sedaily.com/Html/Event/impeachment/impeachment_10.png" alt="" /></a>
+			</a>
+		</div>
+	</div>-->
+  <script type="text/javascript">
+  function StockPanelPopup(type) {
+    if (screen.width > 1198) {
+      Width = 1198;
+    } else {
+      Width = screen.width;
+    }
+
+    if (screen.height > 800) {
+      Height = 800;
+    } else {
+      Height = screen.height;
+    }
+
+    var params = 'width=' + Width;
+    params += ', height=' + Height;
+    params += ', top=0, left=0, titlebar=no,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no';
+
+    var panel = window.open('/Stock/Quote?type=' + type, 'StockPanelPopup', params);
+    if (window.focus) { panel.focus() }
+  }
+
+  function RFTopStockData() {
+
+    var STOCK_WAIT = 83000;
+    var STOCK_STIME = 90000;
+    var STOCK_ETIME = 160000;
+    var REFRESH_TIME = 10;
+    var ALL_REFRESH_TIME = 60;
+    var Now = new Date();
+    $.get("/mock/stock.json?date=" + DateFormat(Now, "MMddHHmmss"), function(json) {
+
+      $.each(json.StockData, function(index, value) {
+        if ($("#TopStock_" + value.Market + "_CurrentPrice").html() != value.CurrentPrice.toFixed(2)) {
+          var css = "";
+          var c = value.Change;
+          if (c == "0" || c == "3") {
+            css = "black";
+          } else if (c == "1") {
+            css = "up allup";
+          } else if (c == "2") {
+            css = "up";
+          } else if (c == "4") {
+            css = "down allup";
+          } else if (c == "5") {
+            css = "down";
+          }
+          $("#TopStock_" + value.Market + "_CurrentPrice").hide();
+          $("#TopStock_" + value.Market + "_CurrentPrice").attr("class", css);
+          $("#TopStock_" + value.Market + "_CurrentPrice").html(FormatNumber(value.CurrentPrice.toFixed(2)));
+          $("#TopStock_" + value.Market + "_CurrentPrice").slideDown(1000);
+
+          $("#TopStock_" + value.Market + "_PreGap").hide();
+          $("#TopStock_" + value.Market + "_PreGap").attr("class", css);
+          $("#TopStock_" + value.Market + "_PreGap").html(value.PreGap.toFixed(2));
+          $("#TopStock_" + value.Market + "_PreGap").slideDown(1000);
+
+          $("#TopStock_" + value.Market + "_PreRate").hide();
+          $("#TopStock_" + value.Market + "_PreRate").attr("class", css);
+          $("#TopStock_" + value.Market + "_PreRate").html((value.PreRate > 0 ? "+" : "") + value.PreRate.toFixed(2) + "%");
+          $("#TopStock_" + value.Market + "_PreRate").slideDown(1000);
+        }
+
+        //지수 정보 페이지 체크
+        if (typeof UpdateIndexValue == "function") {
+          if ($(".kospi_info").length > 0) {
+            if ($(".kospi_info span").html() == "KOSPI" && value.Market == 1) {
+              UpdateIndexValue(value)
+            } else if ($(".kospi_info span").html() == "KOSDAQ" && value.Market == 2) {
+              UpdateIndexValue(value)
+            }
+          }
+        }
+
+      });
+
+      //메인 차트 체크
+      if (typeof GetMainChartData == "function" && typeof UpdateMainChart == "function") {
+        UpdateMainChart(json.StockData[0])
+        UpdateMainChart(json.StockData[1])
+        GetMainChartData();
+      }
+
+      //우측 차트 체크
+      if (typeof GetRightChartData == "function" && typeof UpdateRightChart == "function") {
+        UpdateRightChart(json.StockData[0])
+        UpdateRightChart(json.StockData[1])
+        GetRightChartData()
+
+      }
+
+      if (json.CT < STOCK_STIME || json.CT > STOCK_ETIME || json.IsOpen == 0) {
+
+        if ((STOCK_WAIT - 10000) < json.CT && json.CT < STOCK_WAIT) {
+          setTimeout("RFTopStockData()", (STOCK_WAIT - json.CT) * 600);
+        } else if (STOCK_WAIT < json.CT && json.CT < STOCK_STIME) {
+          setTimeout("RFTopStockData()", (STOCK_STIME - json.CT) * 600);
+        } else {
+          setTimeout("RFTopStockData()", 60 * 60 * 1000);
+        }
+
+      } else {
+        setTimeout("RFTopStockData()", 60 * 1000);
+      }
+    });
+
+  }
+  $(function() {
+    RFTopStockData();
+  })
+  </script>
+
+  <ul id="skipnav">
+    <li><a href="./list.html#Menu1_GA">주 메뉴 바로가기</a></li>
+    <li><a href="./list.html#container">본문내용 바로가기</a></li>
+  </ul>
+
+  <div class="stock_bar">
+    <div>
+      <a href="javascript:StockPanelPopup(1);" class="stock_bar_go"><span>전종목 시세보기</span></a>
+      <ul>
+        <li>
+          <a href="javascript:StockPanelPopup(1);">
+						<span>KOSPI</span>
+						<strong id="TopStock_1_CurrentPrice" class="down" style="display: inline-block;">2,456.14</strong>
+						<span id="TopStock_1_PreGap" class="down" style="display: inline-block;">1.51</span>
+						<span id="TopStock_1_PreRate" class="down" style="display: inline-block;">-0.06%</span>
+					</a>
+        </li>
+        <li>
+          <a href="javascript:StockPanelPopup(2);">
+						<span>KOSDAQ</span>
+						<strong id="TopStock_2_CurrentPrice" class="down" style="display: inline-block;">874.01</strong>
+						<span id="TopStock_2_PreGap" class="down" style="display: inline-block;">0.42</span>
+						<span id="TopStock_2_PreRate" class="down" style="display: inline-block;">-0.05%</span>
+					</a>
+        </li>
+        <li>
+          <a href="javascript:StockPanelPopup(1);">
+						<span>KOSPI 200</span>
+						<strong id="TopStock_3_CurrentPrice" class="down" style="display: inline-block;">316.83</strong>
+						<span id="TopStock_3_PreGap" class="down" style="display: inline-block;">0.51</span>
+						<span id="TopStock_3_PreRate" class="down" style="display: inline-block;">-0.16%</span>
+					</a>
+        </li>
+        <li>
+          <a href="javascript:StockPanelPopup(1);">
+						<span>환율<span>(USD/KRW)</span></span>
+						<strong id="TopStock_USDKRW_CurrentPrice" class="down" style="display: inline-block;">1,072.00</strong>
+						<span id="TopStock_USDKRW_PreGap" class="down" style="display: inline-block;">0.50</span>
+						<span id="TopStock_USDKRW_PreRate" class="down" style="display: inline-block;">-0.05%</span>
+					</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="header_bar">
+    <div class="header_bar_conbox">
+      <ul class="header_bar_sec1">
+        <li><a href="http://www.sedaily.com/Cp/Paoin">PDF보기</a></li>
+
+        <li class="bar_cen_line"></li>
+        <li><a href="http://firsts.sedaily.com/" target="_blank">초판보기</a></li>
+      </ul>
+      <ul class="header_bar_sec2">
+        <li><a href="http://decenter.sedaily.com/" target="_blank"><img src="./imgs/bar_7.png" alt="서울경제 디센터"></a></li>
+        <li class="bar_cen_line"></li>
+        <li><a href="http://golf.sedaily.com/" target="_blank"><img src="./imgs/bar_3.jpg" alt="서경 Golf"></a></li>
+        <li class="bar_cen_line"></li>
+        <li><a href="http://www.sentv.co.kr/"><img src="./imgs/bar_1.jpg" alt="서울경제TV"></a></li>
+        <li class="bar_cen_line"></li>
+        <li><a href="http://www.koreatimes.com/"><img src="./imgs/bar_2.jpg" alt="미주한국일보"></a></li>
+        <li class="header_bar_sec2_impeach"><a id="aSedNow" href="javascript:OpenSedNow()"><img src="./imgs/bar_6.jpg" alt="서경now"></a></li>
+      </ul>
+
+      <div class="sed_now_pop" id="divSedNow" style="display:none">
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="layer_bg"></div>
+  <div class="layer_bg2"></div>
+  <div id="loading" style="display:none;"><img src="./imgs/ajax_loader.gif" alt="로딩중"></div>
+  <section id="wrap">
+    <h2>서울경제</h2>
+
+
+    <script>
+    $(document).ready(function() {
+      var curType = 1;
+      var delay = 4000;
+      setInterval(mobileTop, delay);
+
+      function mobileTop() {
+        if (curType == 1) {
+          $(".m_grayheader > .m_grayheader_three").show();
+          $(".m_grayheader > .m_grayheader_two").hide();
+          curType = 0;
+        } else {
+          $(".m_grayheader > .m_grayheader_three").hide();
+          $(".m_grayheader > .m_grayheader_two").show();
+          curType = 1;
+        }
+      }
+    });
+    </script>
+    <header id="header">
+      <div class="header_bg">
+        <section class="header_wrap">
+          <div class="header_top">
+            <div class="header_banner">
+              <div class="header_roll">
+                <a href="http://www.sedaily.com/V/Event/PyeongChang/">
+							<img src="./imgs/HB_180205.png" alt="2018 평창 동계올림픽">
+						</a>
+
+              </div>
+            </div>
+            <h1><a href="http://www.sedaily.com/"><img src="./imgs/logo.png" alt="서울경제" width="101"></a></h1>
+            <ul class="share_list">
+              <li><a href="https://www.facebook.com/sedailythumb/" target="_blank"><img src="./imgs/sns_f.png" alt="페이스북" width="7"></a></li>
+              <li><a href="https://www.youtube.com/channel/UCIh431O7x00rZke3oNBuRRA/" target="_blank"><img src="./imgs/sns_y.png" alt="유투브" width="22"></a></li>
+              <li><a href="https://www.instagram.com/sedaily_thumb/" target="_blank"><img src="./imgs/sns_i.png" alt="인스타그램" width="16"></a></li>
+              <li><a id="btnTopNewsLetter" href="javascript:GoToRegNewsLetter()"><img src="./imgs/sns_m.png" alt="메일" width="16"></a></li>
+            </ul>
+          </div>
+          <div class="header_bottom">
+            <div class="btn_sitemap">
+              <a href="javascript:h_Layer($(&#39;#aSitemap&#39;))" id="aSitemap" class="sitemap_open"><img src="./imgs/btn_sub_menu.png" alt="전체 메뉴 보기"></a>
+            </div>
+            <nav class="gnb">
+              <ul>
+                <li id="Menu1_GA">
+                  <a href="./news.html">증권</a>
+                  <ul style="padding-left: 330px; display: none;">
+                    <li id="Menu2_GA91">
+                      <a href="http://www.sedaily.com/StockIndex">지수정보</a>
+                    </li>
+                    <li id="Menu2_GA01">
+                      <a href="./list.html">시황</a>
+                    </li>
+                    <li id="Menu2_GA92">
+                      <a href="http://www.sedaily.com/Stockinfo">종목정보</a>
+                    </li>
+                    <li id="Menu2_GA02">
+                      <a href="./list.html">증시정책</a>
+                    </li>
+                    <li id="Menu2_GA03">
+                      <a href="./list.html">해외증시</a>
+                    </li>
+                    <li id="Menu2_GA93">
+                      <a href="http://www.sedaily.com/StockNotice">공시</a>
+                    </li>
+                    <li id="Menu2_GA05">
+                      <a href="./list.html">종목·투자전략</a>
+                    </li>
+                    <li id="Menu2_GA09">
+                      <a href="./list.html">채권</a>
+                    </li>
+                    <li id="Menu2_GA07">
+                      <a href="./list.html">특징주</a>
+                    </li>
+                    <li id="Menu2_GA06">
+                      <a href="./list.html">M&amp;A·IPO</a>
+                    </li>
+                    <li id="Menu2_GA08">
+                      <a href="./list.html">펀드·신상품</a>
+                    </li>
+                    <li id="Menu2_GA11">
+                      <a href="./list.html">증권정보</a>
+                    </li>
+                    <li id="Menu2_GA13">
+                      <a href="http://www.sedaily.com/NewsSub/GA13/1">News봇</a>
+                    </li>
+                    <li id="Menu2_GA10">
+                      <a href="./list.html">증권기획</a>
+                    </li>
+                    <li id="Menu2_GA12">
+                      <a href="./list.html">오늘의 재운</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_GB">
+                  <a href="./news.html">부동산</a>
+                  <ul style="padding-left: 200px; display: none;">
+                    <li id="Menu2_GB01">
+                      <a href="./list.html">정책·제도</a>
+                    </li>
+                    <li id="Menu2_GB02">
+                      <a href="./list.html">분양·청약</a>
+                    </li>
+                    <li id="Menu2_GB03">
+                      <a href="./list.html">아파트·주택</a>
+                    </li>
+                    <li id="Menu2_GB04">
+                      <a href="./list.html">오피스·상가·토지</a>
+                    </li>
+                    <li id="Menu2_GB05">
+                      <a href="./list.html">건설업계</a>
+                    </li>
+                    <li id="Menu2_GB06">
+                      <a href="./list.html">간접투자</a>
+                    </li>
+                    <li id="Menu2_GB07">
+                      <a href="./list.html">기획·연재</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_GC">
+                  <a href="./news.html">경제 · 금융</a>
+                  <ul style="padding-left: 250px; display: none;">
+                    <li id="Menu2_GC01">
+                      <a href="./list.html">경제동향</a>
+                    </li>
+                    <li id="Menu2_GC02">
+                      <a href="./list.html">외환</a>
+                    </li>
+                    <li id="Menu2_GC03">
+                      <a href="./list.html">정책·세금</a>
+                    </li>
+                    <li id="Menu2_GC04">
+                      <a href="./list.html">통상·자원</a>
+                    </li>
+                    <li id="Menu2_GC05">
+                      <a href="./list.html">공기업</a>
+                    </li>
+                    <li id="Menu2_GC06">
+                      <a href="./list.html">금융정책</a>
+                    </li>
+                    <li id="Menu2_GC07">
+                      <a href="./list.html">예적금</a>
+                    </li>
+                    <li id="Menu2_GC08">
+                      <a href="./list.html">여신</a>
+                    </li>
+                    <li id="Menu2_GC09">
+                      <a href="./list.html">보험·카드</a>
+                    </li>
+                    <li id="Menu2_GC10">
+                      <a href="./list.html">저축은행·캐피털·대부업</a>
+                    </li>
+                    <li id="Menu2_GC11">
+                      <a href="./list.html">재테크</a>
+                    </li>
+                    <li id="Menu2_GC12">
+                      <a href="./list.html">금융가</a>
+                    </li>
+                    <li id="Menu2_GC13">
+                      <a href="./list.html">기획·연재</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_GD" class="">
+                  <a href="./news.html">산업</a>
+                  <ul style="padding-left: 0px; display: none; left: 375.957px; margin-left: -147.5px;">
+                    <li id="Menu2_GD01">
+                      <a href="./list.html">기업</a>
+                    </li>
+                    <li id="Menu2_GD02">
+                      <a href="./list.html">생활</a>
+                    </li>
+                    <li id="Menu2_GD03">
+                      <a href="./list.html">경제단체</a>
+                    </li>
+                    <li id="Menu2_GD04">
+                      <a href="./list.html">자동차</a>
+                    </li>
+                    <li id="Menu2_GD05">
+                      <a href="./list.html">바이오&amp;ICT</a>
+                    </li>
+                    <li id="Menu2_GD06">
+                      <a href="./list.html">기획·연재</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_GE">
+                  <a href="./news.html">정치</a>
+                  <ul style="padding-left: 0px; display: none;">
+                    <li id="Menu2_GE01">
+                      <a href="./list.html">정치일반</a>
+                    </li>
+                    <li id="Menu2_GE02">
+                      <a href="./list.html">청와대</a>
+                    </li>
+                    <li id="Menu2_GE03">
+                      <a href="./list.html">국회·정당·정책</a>
+                    </li>
+                    <li id="Menu2_GE04">
+                      <a href="./list.html">통일·외교·안보</a>
+                    </li>
+                    <li id="Menu2_GE05">
+                      <a href="./list.html">기획·연재</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_GK">
+                  <a href="./news.html">사회</a>
+                  <ul style="padding-left: 0px; display: none;">
+                    <li id="Menu2_GK01">
+                      <a href="./list.html">사회일반</a>
+                    </li>
+                    <li id="Menu2_GK02">
+                      <a href="./list.html">전국</a>
+                    </li>
+                    <li id="Menu2_GK03">
+                      <a href="./list.html">사회이슈</a>
+                    </li>
+                    <li id="Menu2_GK04">
+                      <a href="./list.html">기획·연재</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_GF" class="">
+                  <a href="./news.html">국제</a>
+                  <ul style="padding-left: 0px; display: none; left: 542.949px; margin-left: -130px;">
+                    <li id="Menu2_GF01">
+                      <a href="./list.html">정치·사회</a>
+                    </li>
+                    <li id="Menu2_GF02">
+                      <a href="./list.html">경제·마켓</a>
+                    </li>
+                    <li id="Menu2_GF03">
+                      <a href="./list.html">기업</a>
+                    </li>
+                    <li id="Menu2_GF04">
+                      <a href="./list.html">인물·화제</a>
+                    </li>
+                    <li id="Menu2_GF06">
+                      <a href="./list.html">기획·연재</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_GG" class="">
+                  <a href="./news.html">오피니언</a>
+                  <ul style="padding-left: 0px; display: none; left: 598.613px; margin-left: -133px;">
+                    <li id="Menu2_GG01">
+                      <a href="./list.html">사설</a>
+                    </li>
+                    <li id="Menu2_GG02">
+                      <a href="http://www.sedaily.com/NewsSub/GG02/1">사내칼럼</a>
+                    </li>
+                    <li id="Menu2_GG03">
+                      <a href="http://www.sedaily.com/NewsSub/GG03/1">사외칼럼</a>
+                    </li>
+                    <li id="Menu2_GG04">
+                      <a href="./list.html">사고알림</a>
+                    </li>
+                    <li id="Menu2_GG06">
+                      <a href="./list.html">피플</a>
+                    </li>
+                    <li id="Menu2_GG07">
+                      <a href="http://www.sedaily.com/NewsSub/GG07/1">기획·연재</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_GH" class="on">
+                  <a href="./news.html">문화 · 스포츠</a>
+                  <ul style="padding-left: 0px; display: block; left: 681.953px; margin-left: -89px;">
+                    <li id="Menu2_GH01" class="on">
+                      <a href="./list.html">라이프</a>
+                    </li>
+                    <li id="Menu2_GH02">
+                      <a href="./list.html">문화</a>
+                    </li>
+                    <li id="Menu2_GH03">
+                      <a href="./list.html">방송·연예</a>
+                    </li>
+                    <li id="Menu2_GH04">
+                      <a href="./list.html">스포츠</a>
+                    </li>
+                    <li id="Menu2_GH05">
+                      <a href="./list.html">기획·연재</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_PT" class="">
+                  <a href="http://www.sedaily.com/v/Photo">포토 · 동영상</a>
+                  <ul style="padding-left: 0px; display: none; left: 789.648px; margin-left: -123px;">
+                    <li id="Menu2_PT01">
+                      <a href="http://www.sedaily.com/Photo/News">포토뉴스</a>
+                    </li>
+                    <li id="Menu2_PT02">
+                      <a href="http://www.sedaily.com/Photo/Gallery">포토갤러리</a>
+                    </li>
+                    <li id="Menu2_PT03">
+                      <a href="http://www.sedaily.com/Photo/Interactive/Card">카드뉴스</a>
+                    </li>
+                    <li id="Menu2_PT04">
+                      <a href="http://www.sedaily.com/Photo/Interactive/Info">인포그래픽</a>
+                    </li>
+                    <li id="Menu2_PT05">
+                      <a href="http://www.sedaily.com/Photo/Interactive/Vod">영상뉴스</a>
+                    </li>
+
+                  </ul>
+                </li>
+                <li id="Menu1_GL">
+                  <a href="./news.html">서경</a>
+                  <ul style="padding-left: 0px; display: none;">
+                    <li id="Menu2_GL01">
+                      <a href="./list.html">TV·방송</a>
+                    </li>
+                    <li id="Menu2_GL02">
+                      <a href="./list.html">영화</a>
+                    </li>
+                    <li id="Menu2_GL03">
+                      <a href="./list.html">가요</a>
+                    </li>
+                    <li id="Menu2_GL04">
+                      <a href="./list.html">문화</a>
+                    </li>
+                    <li id="Menu2_GL05">
+                      <a href="./list.html">라이프</a>
+                    </li>
+                    <li id="Menu2_GL07">
+                      <a href="./list.html">포토</a>
+                    </li>
+
+                  </ul>
+                </li>
+              </ul>
+              <span class="bg_on" style="display: inline; left: 681.953px; margin-left: 48.5px;"><img src="./imgs/bg_gnb.png" alt=""></span>
+            </nav>
+
+            <ul class="btn_other">
+              <li class="btn_search"><a href="javascript:h_Layer($(&#39;#aSearchOpen&#39;))" id="aSearchOpen" class="search_open"><img src="./imgs/btn_search.png" alt="검색" width="53"></a></li>
+              <li class="btn_mypage1">
+                <a id="btnMypageLink1" href="http://www.sedaily.com/Account/Member/Login"><img src="./imgs/btn_user.png" alt="로그인" width="53"></a>
+                <div class="my_page">
+                  <ul>
+                    <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/Journalist">내가 구독한 기자</a></li>
+                    <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/News/NewsView/NewsScrapList">저장한기사<span id="MenuSaveNewsCount1" class="letter"></span></a></li>
+                    <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a id="MemberEditLink" href="http://www.sedaily.com/Account/MyPage/MemberLogin">개인정보 관리</a></li>
+                    <li id="btnPassWordReset1" onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/PwdChange">비밀번호 재설정</a></li>
+                    <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/EmailSetting">이메일 설정</a></li>
+                    <li><a id="TopLoginMenu_PC1" title="로그아웃"></a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="header_bottom view_title">
+            <h1><a href="http://www.sedaily.com/"><img src="./imgs/logo.png" alt="서울경제" width="101"></a></h1>
+            <h2 id="NewsMenuTitle"></h2>
+            <div class="btn_sitemap">
+              <a href="javascript:h_Layer($(&#39;#aSitemap2&#39;))" id="aSitemap2" class="sitemap_open"><img src="./imgs/btn_sub_menu.png" alt="전체 메뉴 보기"></a>
+            </div>
+            <ul class="btn_other">
+              <li class="btn_search"><a href="javascript:h_Layer($(&#39;#aSearchOpen2&#39;))" id="aSearchOpen2" class="search_open"><img src="./imgs/btn_search.png" alt="검색" width="53"></a></li>
+              <li class="btn_mypage2">
+                <a id="btnMypageLink2" href="http://www.sedaily.com/Account/Member/Login"><img src="./imgs/btn_user.png" alt="로그인" width="53"></a>
+                <div class="my_page">
+                  <ul>
+                    <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/Journalist">내가 구독한 기자</a></li>
+                    <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/News/NewsView/NewsScrapList">저장한기사<span id="MenuSaveNewsCount2" class="letter"></span></a></li>
+                    <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/MemberLogin">개인정보 관리</a></li>
+                    <li id="btnPassWordReset2" onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/PwdChange">비밀번호 재설정</a></li>
+                    <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/EmailSetting">이메일 설정</a></li>
+                    <li><a id="TopLoginMenu_PC2" title="로그아웃"></a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="m_header">
+            <h1><a href="http://www.sedaily.com/"><img src="./imgs/m_logo.png" alt="서울경제" width="84"></a></h1>
+            <div class="btn_wrap">
+              <ul>
+                <li><a href="javascript:h_Layer($(&#39;#aMSearchOpen&#39;))" id="aMSearchOpen" class="search_open"><img src="./imgs/m_search.png" alt="검색" width="55"></a></li>
+                <li class="btn_mypage3">
+                  <a id="btnMypageLink3" href="http://www.sedaily.com/Account/Member/Login"><img src="./imgs/m_user.png" alt="로그인" width="55"></a>
+                  <div class="my_page">
+                    <ul>
+                      <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/Journalist">내가 구독한 기자</a></li>
+                      <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/News/NewsView/NewsScrapList">저장한기사<span id="MenuSaveNewsCount3" class="letter"></span></a></li>
+                      <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/MemberLogin">개인정보 관리</a></li>
+                      <li id="btnPassWordReset3" onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/PwdChange">비밀번호 재설정</a></li>
+                      <li onmouseover="TopMenuMyPage(&#39;on&#39;, this)" onmouseout="TopMenuMyPage(&#39;off&#39;, this)"><a href="http://www.sedaily.com/Account/MyPage/EmailSetting">이메일 설정</a></li>
+                      <li><a id="TopLoginMenu_M" title="로그아웃"></a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li><a href="javascript:h_Layer($(&#39;#aMSitemap&#39;))" id="aMSitemap" class="sitemap_open"><img src="./imgs/m_sitemap.png" alt="전체 메뉴 보기" width="55"></a></li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="sitemap">
+            <ul>
+              <li>
+                <a href="./news.html">증권</a>
+                <ul>
+
+                  <li>
+                    <a href="http://www.sedaily.com/StockIndex">지수정보</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">시황</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/Stockinfo">종목정보</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">증시정책</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">해외증시</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/StockNotice">공시</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">종목·투자전략</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">채권</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">특징주</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">M&amp;A·IPO</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">펀드·신상품</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">증권정보</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/NewsSub/GA13/1">News봇</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">증권기획</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">오늘의 재운</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="./news.html">부동산</a>
+                <ul>
+
+                  <li>
+                    <a href="./list.html">정책·제도</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">분양·청약</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">아파트·주택</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">오피스·상가·토지</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">건설업계</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">간접투자</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">기획·연재</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="./news.html">경제 · 금융</a>
+                <ul>
+
+                  <li>
+                    <a href="./list.html">경제동향</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">외환</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">정책·세금</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">통상·자원</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">공기업</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">금융정책</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">예적금</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">여신</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">보험·카드</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">저축은행·캐피털·대부업</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">재테크</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">금융가</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">기획·연재</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="./news.html">산업</a>
+                <ul>
+
+                  <li>
+                    <a href="./list.html">기업</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">생활</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">경제단체</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">자동차</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">바이오&amp;ICT</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">기획·연재</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="./news.html">정치</a>
+                <ul>
+
+                  <li>
+                    <a href="./list.html">정치일반</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">청와대</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">국회·정당·정책</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">통일·외교·안보</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">기획·연재</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="./news.html">사회</a>
+                <ul>
+
+                  <li>
+                    <a href="./list.html">사회일반</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">전국</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">사회이슈</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">기획·연재</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="./news.html">국제</a>
+                <ul>
+
+                  <li>
+                    <a href="./list.html">정치·사회</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">경제·마켓</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">기업</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">인물·화제</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">기획·연재</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="./news.html">오피니언</a>
+                <ul>
+
+                  <li>
+                    <a href="./list.html">사설</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/NewsSub/GG02/1">사내칼럼</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/NewsSub/GG03/1">사외칼럼</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">사고알림</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">피플</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/NewsSub/GG07/1">기획·연재</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="./news.html">문화 · 스포츠</a>
+                <ul>
+
+                  <li>
+                    <a href="./list.html">라이프</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">문화</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">방송·연예</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">스포츠</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">기획·연재</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="http://www.sedaily.com/v/Photo">포토 · 동영상</a>
+                <ul>
+
+                  <li>
+                    <a href="http://www.sedaily.com/Photo/News">포토뉴스</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/Photo/Gallery">포토갤러리</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/Photo/Interactive/Card">카드뉴스</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/Photo/Interactive/Info">인포그래픽</a>
+                  </li>
+
+                  <li>
+                    <a href="http://www.sedaily.com/Photo/Interactive/Vod">영상뉴스</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="./news.html">서경스타</a>
+                <ul>
+
+                  <li>
+                    <a href="./list.html">TV·방송</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">영화</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">가요</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">문화</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">라이프</a>
+                  </li>
+
+                  <li>
+                    <a href="./list.html">포토</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li>
+                <a href="http://www.sedaily.com/v/FORTUNE">매거진</a>
+                <ul>
+                  <li><a href="http://www.sedaily.com/v/FORTUNE">포춘코리아</a></li>
+                  <li><a href="http://www.sedaily.com/v/GOLF">골프매거진</a></li>
+                  <li class="last"><a href="http://www.sedaily.com/v/POPSCIENCE">파퓰러사이언스</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="http://www.sedaily.com/Info/Company/Intro">회사소개</a>
+                <ul>
+                  <li><a href="http://www.sedaily.com/Info/Company/Intro">회사소개</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/Greet">CEO 인사말</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/HistoryTab1">서울경제가 걸어온 길</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/Event">행사 및 시상</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/Map">약도 및 연락처</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/NPaperInfo">구독안내</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/AdInfo">광고안내</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/SvcPrivate">개인정보취급방침</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/SvcProvision">이용약관</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/SvcTeenagers">청소년 보호정책</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Company/Grievance">고충처리인</a></li>
+                  <li><a href="http://www.sedaily.com/Info/Board/List?n=1">공지사항</a></li>
+                  <li class="last"><a href="http://www.sedaily.com/Info/Board/List?n=2">이벤트</a></li>
+                </ul>
+              </li>
+              <li class="one_depth"><a href="javascript:HeadLineTopLink()" class="letter">All Headline</a></li>
+              <li class="one_depth"><a href="http://www.sedaily.com/Journalist/Content/List" class="letter">서울경제 기자채널</a></li>
+              <li class="one_depth"><a href="http://www.sedaily.com/v/Issue">이슈 투데이</a></li>
+              <li class="one_depth"><a href="http://www.sedaily.com/v/Cube">서경 CUBE</a></li>
+              <li class="one_depth"><a href="http://www.sedaily.com/v/StzClub">스타즈 클럽</a></li>
+              <li class="one_depth"><a href="http://www.sedaily.com/Beri/Content/Vision">백상경제연구원</a></li>
+              <li class="one_depth" id="li_sednow" style="display:none"><a href="http://www.sedaily.com/NowEvent/ListMobile">서경 Now</a></li>
+              <li class="one_depth btn_setting" id="setting"><a href="sedaily://setting">환경설정</a></li>
+            </ul>
+            <a class="sitemap_close" href="javascript:h_Layer_hide($(&#39;#aClose&#39;))" id="aClose"><img src="./imgs/btn_close.png" alt="전체 메뉴 닫기" width="23"></a>
+          </div>
+
+
+          <div class="m_grayheader">
+            <p class="m_grayheader_one">
+              <a href="http://www.sedaily.com/News/NewsAll">
+						<span><img src="./imgs/newsflash_icon.png" alt="실시간 속보"></span>
+						<span>실시간 속보</span>
+					</a>
+            </p>
+            <p class="m_grayheader_two" style="display: none;">
+              <a href="http://decenter.sedaily.com/" target="_blank">
+						<span>블록체인의 모든 것, 디센터</span>
+					</a>
+
+            </p>
+            <p class="m_grayheader_three" style="display: block;">
+              <a href="http://www.sedaily.com/V/Event/PyeongChang/">
+						<span>2018 평창 동계올림픽</span>
+					</a>
+            </p>
+
+          </div>
+
+
+          <form method="post" name="topSearchFrm" id="topSearchFrm">
+            <div class="search">
+              <div>
+                <h3>SEARCH</h3>
+                <div class="search_word">
+                  <p>
+                    <input type="text" name="scKeyword" id="scKeyword" value="검색어를 입력하세요" title="검색어 입력" _vimium-has-onclick-listener="">
+                  </p>
+                  <a id="btnTopSearch" href="javascript:TopSearchClick()"><img src="./imgs/btn_search02.png" alt="검색" width="21"></a>
+                </div>
+                <ul class="popularity_search">
+
+                  <li><a href="http://www.sedaily.com/Search/?scText=%ea%b8%b0%ec%9e%90"># 기자</a></li>
+                  <li><a href="http://www.sedaily.com/Search/?scText=%ed%8a%b8%ec%99%80%ec%9d%b4%ec%8a%a4"># 트와이스</a></li>
+                  <li><a href="http://www.sedaily.com/Search/?scText=%ea%b8%89%eb%93%b1"># 급등</a></li>
+                  <li><a href="http://www.sedaily.com/Search/?scText=%ed%8e%80%eb%93%9c"># 펀드</a></li>
+                  <li><a href="http://www.sedaily.com/Search/?scText=%ec%82%b0%ec%97%85%ec%9d%80%ed%96%89"># 산업은행</a></li>
+                  <li><a href="http://www.sedaily.com/Search/?scText=%ec%84%9d%ec%9c%a0+%ed%99%94%ed%95%99"># 석유 화학</a></li>
+                  <li><a href="http://www.sedaily.com/Search/?scText=%eb%85%b8%eb%9f%89%ec%a7%84%eb%89%b4%ed%83%80%ec%9a%b4"># 노량진뉴타운</a></li>
+                  <li><a href="http://www.sedaily.com/Search/?scText=%ec%8b%a0%eb%9d%bc%ec%a0%a0"># 신라젠</a></li>
+                  <li><a href="http://www.sedaily.com/Search/?scText=%ed%95%b4%ec%96%91"># 해양</a></li>
+                  <li><a href="http://www.sedaily.com/Search/?scText=%ec%9d%b8%ea%b5%ac+%ec%b6%94%ec%9d%b4"># 인구 추이</a></li>
+
+                </ul>
+                <a class="search_close" href="javascript:h_Layer_hide($(&#39;#searchclosebtn&#39;))" id="searchclosebtn"><img src="./imgs/btn_close.png" alt="검색창 닫기" width="23"></a>
+              </div>
+            </div>
+          </form>
+
+
+          <script type="text/javascript">
+          $("#scKeyword").keypress(function(event) {
+            if (event.which == 13) {
+              TopSearchClick();
+              return false;
+            }
+          });
+
+          $("#scKeyword").keydown(function(event) {
+            if ($('#scKeyword').val().indexOf("검색어를 입력하세요") >= 0) {
+              $("#scKeyword").val($("#scKeyword").val().replace("검색어를 입력하세요", ""));
+            }
+          });
+
+          function TopSearchClick() {
+            if ($('#scKeyword').val() == "" || $('#scKeyword').val() == "검색어를 입력하세요") {
+              alert("검색어를 입력하세요");
+              $("#scKeyword").focus();
+              return false;
+            }
+            if (pubByteCheckTextarea("scKeyword") <= 1) {
+              alert("검색어는 한글1자, 영문2자 이상 입력해 주십시요.");
+              $("#scKeyword").focus();
+              return false;
+            }
+
+            $('#topSearchFrm').attr('action', '/Search/?scText=' + encodeURIComponent($.trim($("#scKeyword").val())));
+            $("#topSearchFrm").submit();
+          }
+
+          $('#scKeyword').click(function(e) {
+            if ($('#scKeyword').val() == "검색어를 입력하세요") {
+              $('#scKeyword').val('');
+            }
+          });
+          </script>
+
+        </section>
+      </div>
+    </header>
+
+    <script type="text/javascript">
+    if (CV(NClass)) {
+      $('#Menu1_' + NClass.substring(0, 2)).addClass("on");
+      if (NClass.length > 2) {
+        $('#Menu2_' + NClass.substring(0, 4)).addClass("on");
+      }
+    }
+
+    function HeadLineTopLink() {
+      if (DeviceCheck() == "web") {
+        HeadLinePopup("", "AL");
+      } else {
+        location.href = "/News/NewsAll";
+      }
+    }
+
+    $(document).ready(function() {
+      if ($.Cookie('ckEnrollClass') == "fb" || $.Cookie('ckEnrollClass') == "gplus") {
+        $('[id^="btnPassWordReset"]').hide();
+        $('#MemberEditLink').attr("href", "/Account/MyPage/MemberEdit");
+      }
+
+      //App 인 경우만.
+      if (DeviceCheck() == "mobile_app") {
+        $('[id^="setting"]').show();
+      }
+      //서경나우
+      if (DeviceCheck() != "web") {
+        $('#li_sednow').show();
+      }
+
+      $.TopMenuLoginLink();
+    });
+
+    $.TopMenuLoginLink = function() {
+      if (CV($.Cookie('ckMemberKey'))) {
+        $('[id^="TopLoginMenu"]').text('로그아웃').attr("href", "/Account/Member/LogOut");
+
+        $('[id^="TopLoginMenu"]').focusout(function() {
+          $('.my_page').hide();
+        })
+      }
+      //else {
+      //	$('[id^="TopLoginMenu"]').text('로그인').attr("href", "/Account/Member/LogIn");
+      //}
+    };
+
+    function TopMenuMyPage(kind, obj) {
+      if (kind == 'on') {
+        $(obj).addClass('on');
+      } else {
+        $(obj).removeClass('on');
+      }
+    }
+
+    if (CV($.Cookie('ckMemberKey'))) {
+      if (CV($.Cookie('ckSaveNewsCount'))) {
+        $('[id^="MenuSaveNewsCount"]').text("( " + $.Cookie('ckSaveNewsCount') + " )");
+      }
+
+      $('.btn_mypage1, .btn_mypage2').mouseover(function() {
+        $('.my_page').show();
+      });
+
+      $('.btn_mypage1, .btn_mypage2').mouseout(function(e) {
+        $('.my_page').hide();
+      });
+
+      $('.btn_mypage3').click(function(e) {
+        if ($('.my_page').css('display') == "none") {
+          $('.my_page').show();
+        } else {
+          $('.my_page').hide();
+        }
+      });
+      $('[id^="btnMypageLink"]').attr("href", "javascript: OpenMyPage();");
+    } else {
+      var Url = "";
+      if (location.href.toLowerCase().indexOf("/newsview/") > 0) {
+        Url = "?Url=" + location.href.replace(/^.*\/\/[^\/]+/, '');
+      }
+      $('[id^="btnMypageLink"]').attr("href", "/Account/Member/Login" + Url);
+    }
+
+    function OpenMyPage() {
+      $('.my_page').show();
+    }
+    </script>
+
+
+    <div id="container" class="sub_list depth">
+      <div class="main_wing_banner" style="position: absolute;right: -90px; ">
+
+        <a href="http://decenter.sedaily.com/" target="_blank" style="display:block; height:111px; width:80px; ">
+			<img src="./imgs/Decenter_ad_banner11.jpg" alt="블록체인의 모든것 디센터">
+		</a>
+
+        <a href="http://www.sedaily.com/News/Issue/345" style="display:block; height:111px; width:80px; margin-top:10px;">
+			<img src="./imgs/wing_0519_sell.jpg" alt="one클릭! 분양현장">
+		</a>
+
+        <a href="http://www.sedaily.com/V/Event/PyeongChang/" style="display:block; height:111px; width:80px; margin-top:10px; ">
+			<img src="./imgs/wing_0130_olympic.jpg" alt="2018 평창동계올림픽">
+		</a>
+
+
+      </div>
+
+      <div class="m_location">
+        <div class="location">
+          <a href="http://www.sedaily.com/" class="letter">HOME</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="./news.html" class="letter">문화 · 스포츠</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<span class="last">라이프</span>
+        </div>
+      </div>
+
+      <div id="contents-article-list">
+        <form id="ContentForm" name="ContentForm" action="./list.html" method="post">
+          <input id="Page" name="Page" type="hidden" value="">
+          <div id="l-left">
+            <div id="l-left-scroll-start" style="height: 2039px;">
+              <div id="l-left-scroll-in" style="position: relative; top: 0px; left: 0px;">
+                <p class="news_sort">
+                  <span><a href="./list.html" class="on">최신순</a></span>
+                  <span><a href="./list.html?Kind=Rank">인기도순</a></span>
+
+
+                </p>
+                <ul class="news_list">
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVV9I39X4_1_s.jpg" alt="[2018 히트예감 상품]웰로스 &#39;조이텍&#39;"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>[2018 히트예감 상품]웰로스 '조이텍'</span></a></dt>
+                        <dd class="name"> <span>박민영 기자</span> <span class="letter">2018-02-27</span></dd>
+                        <dd><a href="./view.html">웰로스의 ‘조이텍’은 40~50대는 물론 고령의 ‘고개 숙인 남자’들을 위해 개발된 의료기기다. 웰로스에 따르면 대한남성과학회에서 40대 이상 남성 1,570명을 대상으로 한 설문조사 결과 49.8%가 남성으로서의 힘을 제대로 발휘하지 못하는 것으로 나타났다. 조이텍은 하루 5~10분 노력에 따라 남성의 자신감 회복에 도움을 줄 수 있는 성기동맥혈류충전기다. 남성의 해면체 내에 음압을 가해 성기 내의 혈액유입 장애 등을 개</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVV84JQZJ_2_s.jpg" alt="&#39;방사성동위원소 칩&#39; 심어 전립선암 파괴…부작용·합병증 적어"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>'방사성동위원소 칩' 심어 전립선암 파괴…부작용·합병증 적어</span></a></dt>
+                        <dd class="name"> <span>임웅재 기자</span> <span class="letter">2018-02-27</span></dd>
+                        <dd><a href="./view.html">차의과학대 분당차병원 브라키세라피(brachytherapy)팀은 지난 2007년 국내에서 이 수술법을 가장 먼저 도입해 최근 450례를 돌파했다. 수술로봇을 이용해 전립선을 모두 잘라내는 수술도 한다. 브라키세라피는 전립선에 방사성동위원소 물질을 삽입해 치료한다. 재발률과 생존율 면에서 전립선 전체를 떼어내는 기존의 수술과 동등하면서도 부작용·합병증이 적다. 미국 종합암네트워크(NCCN)가 올해 가이드라인에서 전립선암 치</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVV9GLFNI_1_s.jpg" alt="젖니 충치 방치땐 &#39;이&#39;상하게 자라요"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>젖니 충치 방치땐 '이'상하게 자라요</span></a></dt>
+                        <dd class="name"> <span>임웅재 기자</span> <span class="letter">2018-02-27</span></dd>
+                        <dd><a href="./view.html">유치원이나 초등학교에 입학하거나 학년이 올라가는 어린 자녀를 위해 빠뜨리지 않고 챙겨야 할 게 치아·눈 건강이다.소아 시기의 젖니(유치)는 영구치에 비해 충치에 취약하다. 충치 진행 속도도 굉장히 빨라서 한 달가량만 관리가 소홀해도 금방 썩어버리는 경우가 많다. 양치질을 싫어하거나 서투르며 달고 이·잇몸 사이에 잘 달라붙는 과자·사탕·캐러멜·탄산음료 등을 좋아하는 것도 위험요인이다.따라서 식사 뒤 이를 닦</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVV93H6TI_1_s.jpg" alt="&quot;회전근개 3cm 이상 찢어질땐 주변 힘줄 끌어와 수술 효과적&quot;"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>"회전근개 3cm 이상 찢어질땐 주변 힘줄 끌어와 수술 효과적"</span></a></dt>
+                        <dd class="name"> <span>임웅재 기자</span> <span class="letter">2018-02-27</span></dd>
+                        <dd><a href="./view.html">어깨관절 주위를 감싸고 있는 근육(회전근개)을 뼈에 붙어 있게 해주는 힘줄이 3㎝ 이상 찢어진 경우 주변 힘줄을 끌어와 수술하는 게 어깨 기능 회복과 통증 감소에 효과적인 것으로 나타났다. 27일 가톨릭대 서울성모병원에 따르면 김양수·이효진·김종호 정형외과 교수팀은 회전근개 대파열 환자 42명을 수술해 기존 재건술보다 효과적임을 확인했다. 김양수 교수팀은 회전근개 중 가장 흔하게 찢어지는 극상근(가시위근) 밑에</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVV80SKS8_7_s.jpg" alt="[옥건 원장의 탈모 이야기-16] 이마·정수리 같이 빠지는 &#39;설상가상형 탈모&#39;"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>[옥건 원장의 탈모 이야기-16] 이마·정수리 같이 빠지는 '설상가상형 탈모'</span></a></dt>
+                        <dd class="name"> <span>조교환 기자</span> <span class="letter">2018-02-27</span></dd>
+                        <dd><a href="./view.html">유전에 의한 남성형 탈모는 여러 가지 형태로 나타날 수 있으나 전형적인 패턴을 보이기 때문에 가족력과 상관없이 육안만으로도 진단을 내릴 수 있다. 필자는 13회 칼럼에서 유전에 의한 탈모인지 스스로 진단하는 법을, 14회와 15회에서는 M자 탈모의 유형별 치료법과 정수리 탈모의 시기별 치료법에 대해 각각 살펴보았다. 이번에는 M자 탈모와 정수리 탈모가 복합적으로 나타나는 유전성 탈모의 진단과 치료법에 대해 알아보고</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVV6S3Y0S_1_s.jpg" alt="&#39;덕수궁 돌담길 개방&#39; 주한 영국대사, 서울시 명예시민 된다"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>'덕수궁 돌담길 개방' 주한 영국대사, 서울시 명예시민 된다</span></a></dt>
+                        <dd class="name"> <span>한상헌 기자</span> <span class="letter">2018-02-27</span></dd>
+                        <dd><a href="./view.html">60년 만에 시민 품으로 돌아온 덕수궁 돌담길 개방에 협력한 찰스 헤이 주한 영국대사가 서울시 명예시민이 된다.서울시는 헤이 대사가 27일 오전 서울시청에서 박원순 서울시장에게 명예시민증을 받는다고 밝혔다. 2015년 부임한 헤이 대사는 3년간의 임기를 마치고 곧 영국으로 돌아간다.덕수궁 돌담길 1.1km 구간 중 170m는 영국대사관이 점유하면서 1959년부터 60년 가까이 일반인의 통행이 제한돼 왔다. 이 중 영국대사관 후</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVUQVPFOZ_2_s.jpg" alt="자생한방병원 &#39;수기 치료&#39; 국제학술대회 개최"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>자생한방병원 '수기 치료' 국제학술대회 개최</span></a></dt>
+                        <dd class="name"> <span>임웅재 기자</span> <span class="letter">2018-02-26</span></dd>
+                        <dd><a href="./view.html">추나(推拿)·정골(整骨)요법 등 국내외 수기(手技)치료 전문가들이 다음 달 서울에서 ‘비수술 척추·관절치료의 현재와 미래’ 주제로 심도 있는 주제발표와 토론을 펼친다. 자생한방병원은 오는 3월 4일 서울 강남구 그랜드인터컨티넨탈 서울 파르나스에서 개원 30주년을 기념하는 국제학술대회를 개최한다고 26일 밝혔다. 이번 학술대회는 ‘척추·관절질환 수기치료의 세계 흐름과 미래 전략’을 주제로 한 1부, ‘척추·관절</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVURKX8LS_1_s.jpg" alt="운동 안해도 다이어트 효과?…TV홈쇼핑 13개 프로그램 무더기 적발"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>운동 안해도 다이어트 효과?…TV홈쇼핑 13개 프로그램 무더기 적발</span></a></dt>
+                        <dd class="name"> <span>한상헌 기자</span> <span class="letter">2018-02-26</span></dd>
+                        <dd><a href="./view.html">유산소운동을 하지 않고도 복부지방 감소 효과가 있는 것처럼 부풀려 방송을 하며 이미용 기기와 식품을 판매한 TV홈쇼핑의 프로그램들이 무더기로 적발됐다. 26일 방송통신심의위원회와 홈쇼핑업계에 따르면 방심위는 다이어트 관련 판매방송에서 시청자를 기만·오인하도록 한 롯데홈쇼핑·현대홈쇼핑·홈앤쇼핑·CJ오쇼핑·NS홈쇼핑·GS SHOP 등 홈쇼핑 6곳의 13개 프로그램을 적발했다. 28일 광고심의소위원회를 열어 ‘의견진</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVUBGJB4C_1_s.jpg" alt="[봄 건강챙기기] 포근해지면 쏟아지는 잠...규칙적 운동·영양섭취로 이겨내요"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>[봄 건강챙기기] 포근해지면 쏟아지는 잠...규칙적 운동·영양섭취로 이겨내요</span></a></dt>
+                        <dd class="name"> <span>임웅재 기자</span> <span class="letter">2018-02-25</span></dd>
+                        <dd><a href="./view.html">햇살이 따스한 봄철에는 충분히 잠을 자도 졸음이 쏟아진다. 춘곤증이다. ‘봄철 피로증후군’으로도 불리는 춘곤증은 겨우내 위축됐던 우리 몸의 신진대사가 계절의 변화와 함께 활기를 되찾는 과정에서 생기는 피로 증세다. 낮이 길어지고 기온이 올라가면 수면·일생생활의 패턴과 우리 몸 안의 생체시계, 겨우내 추위에 적응했던 피부·근육에도 영향을 미친다. 춘곤증의 대표적 증상은 피로·졸음·식욕부진·소화불량·현기</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVUC5W4V0_1_s.jpg" alt="[봄 건강챙기기] 광동제약 아이톡, 세균 막고 촉촉하게 공해로부터 눈 지켜"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>[봄 건강챙기기] 광동제약 아이톡, 세균 막고 촉촉하게 공해로부터 눈 지켜</span></a></dt>
+                        <dd class="name"> <span>임웅재 기자</span> <span class="letter">2018-02-25</span></dd>
+                        <dd><a href="./view.html">3월에는 건조한 대기와 황사·미세먼지로 인해 안구건조증 증상을 호소하거나 춘곤증으로 피로감에 시달리는 이들이 많다. 눈의 보호벽 역할을 하는 각막을 촉촉하게 유지시켜 주는 인공눈물이나 활성비타민 등이 풍부한 영양제는 봄철 안구건조증과 피로감을 이겨내는 데 큰 도움이 된다. 광동제약의 일회용 인공눈물 ‘아이톡 점안액’은 선인장이 사막에서 생존할 수 있게 해주는 보습 성분 트레할로스, 각막에 윤활막을 형성하</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVUCAUJ8I_1_s.jpg" alt="[봄 건강챙기기] 일동제약 지큐랩, 4중코팅 프로바이오틱스... 파괴되지 않고 장까지 도달"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>[봄 건강챙기기] 일동제약 지큐랩, 4중코팅 프로바이오틱스... 파괴되지 않고 장까지 도달</span></a></dt>
+                        <dd class="name"> <span>임웅재 기자</span> <span class="letter">2018-02-25</span></dd>
+                        <dd><a href="./view.html">일동제약은 연령대별로 세분화 맞춤형 프로바이오틱스 제품 ‘지큐랩’ 시리즈로 장(腸) 건강관리를 돕고 있다. 프로바이오틱스는 체내에 들어가서 건강에 좋은 효과를 주는 미생물을 말한다. 락토바실루스와 비피도박테리움 같은 유산균이 대표적이다.지큐랩은 장 건강지수 GQ(Gut Quotient)와 연구소를 뜻하는 랩(lab)의 합성어다. 지능지수인 IQ, 감성지수인 EQ처럼 장 건강 역시 체계적으로 연구·관리한다는 의미를 담았다. </a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVUB29U4C_3_s.jpg" alt="[역사의 향기/근대문화유산] &lt;25&gt;서대문형무소"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>[역사의 향기/근대문화유산] &lt;25&gt;서대문형무소</span></a></dt>
+                        <dd class="name"> <span>최수문 기자</span> <span class="letter">2018-02-25</span></dd>
+                        <dd><a href="./view.html">우리나라 전통시대 형벌은 태(笞)·장(杖)·도(徒)·유(流)·사(死) 등 다섯 가지로 구분된다. 태·장형은 곤장을 치는 것이고 도형은 관아에서 구금, 유형은 유배를 말한다. 지금의 교도소 형태는 유배형에 가깝다. 장기간 인신구속이라는 개념은 과거에는 없었다고 할 수 있다. 근대에 들어서 서구식 감옥제도가 도입된다. 하지만 일제의 국권침탈과 맞물리면서 감옥은 식민지 억압의 도구로 작용했다. 지난 1908년 서울 서대문</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVUAJVQ1F_1_s.jpg" alt="온라인서도 &#39;영미&#39; 열풍… 컬링 제품 판매량 5배 증가"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>온라인서도 '영미' 열풍… 컬링 제품 판매량 5배 증가</span></a></dt>
+                        <dd class="name"> <span>정수현 기자</span> <span class="letter">2018-02-25</span></dd>
+                        <dd><a href="./view.html">대한민국 여자컬링 대표팀의 ‘영미 효과’가 온라인에서 관련 상품 매출로 이어지고 있다. 25일 온라인 쇼핑사이트 옥션에 따르면 올림픽 개막 이후 컬링 관련 상품 검색이 크게 늘어난 것으로 조사됐다. 지난 9일부터 22일까지 컬링 보드 판매는 지난해 같은 기간보다 5배 이상(450%) 늘었으며 실내용 컬링 게임세트 등 관련 상품이 인기를 끌고 있다. 컬링 보드게임은 테이블 등에 컬링 시트를 깔아둔 뒤 손으로 스톤을 밀거나 </a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVTEBCSKV_1_s.jpg" alt="뇌경색 고위험군 23만명 넘는데...항응고제 안드세요?"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>뇌경색 고위험군 23만명 넘는데...항응고제 안드세요?</span></a></dt>
+                        <dd class="name"> <span>임웅재 기자</span> <span class="letter">2018-02-23</span></dd>
+                        <dd><a href="./view.html">심방이 무질서하게 뛰면서 불규칙한 맥박을 형성하는 심방세동은 그 자체로도 무서운 질환이지만 허혈성 뇌졸중(뇌경색)의 주요 원인이어서 더욱 위험하다. 심방세동 환자와 뇌경색 고위험군은 심장·혈관에 혈전(피떡)이 생기는 것을 억제하는 항응고제를 꾸준히 복용하면서 예방치료를 해야 한다. 전체 국민의 1% 내외가 심방세동 질환을 갖고 있으나 예방치료를 하는 비율은 절반에 그치는 것으로 나타나 주의가 요구된다.최의</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                  <li style="min-height: 76.0078px;">
+                    <p><a href="./view.html"><img src="./imgs/1RVTF7H5PZ_1_s.jpg" alt="[건강 팁-요로결석] 제거해도 5년내 30% 재발...하루 2리터 수분 섭취해야"></a></p>
+                    <div style="padding-left: 154.008px;">
+
+                      <dl>
+                        <dt><a href="./view.html"><span>[건강 팁-요로결석] 제거해도 5년내 30% 재발...하루 2리터 수분 섭취해야</span></a></dt>
+                        <dd class="name"> <span>김경미 기자</span> <span class="letter">2018-02-23</span></dd>
+                        <dd><a href="./view.html">요로결석이란 소변이 만들어져 이동·저장·배설되는 길에 돌(결석)이 생긴 것을 말한다. 소변에 칼슘이나 염분 종류가 지나치게 많이 포함된 상황에서 어떤 원인에 의해 균형을 잃으면 해당 성분들이 분리돼 결석의 결정체가 되고 이것이 뭉쳐서 커지면 결석이 만들어진다. 신장·요관·방광 등 요로에 결석이 생기면 감염이나 요폐색 등의 합병증이 유발될 수 있다. 요로결석의 원인은 정확히 알려져 있지 않지만 서구화된 식생</a></dd>
+                      </dl>
+                    </div>
+                  </li>
+                </ul>
+                <div class="paging deskPage">
+                  <ol>
+
+
+                    <li class="current first"><span>1</span></li>
+                    <li><a href="javascript:; onClick=OnPageMove(2, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">2</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(3, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">3</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(4, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">4</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(5, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">5</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(6, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">6</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(7, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">7</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(8, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">8</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(9, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">9</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(10, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">10</a></li>
+
+
+                    <li class="prev"><img src="./imgs/btn_paging_prev02_none.png" width="36" alt="이전 10페이지"></li>
+
+
+                    <li class="e_prev"><img src="./imgs/btn_paging_prev_none.png" width="36" alt="이전 페이지"></li>
+
+
+                    <li class="e_next"><a href="javascript:; onClick=OnPageMove(2, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);" title="다음 페이지"><img src="./imgs/btn_paging_next.png" alt="다음 페이지" width="36"></a></li>
+
+
+                    <li class="next"><a href="javascript:; onClick=OnPageMove(11, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);" title="다음 10페이지"><img src="./imgs/btn_paging_next02.png" alt="다음 10페이지" width="36"></a></li>
+
+
+                  </ol>
+                </div>
+                <div class="paging mobilePage">
+                  <ol>
+
+
+                    <li class="current first"><span>1</span></li>
+                    <li><a href="javascript:; onClick=OnPageMove(2, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">2</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(3, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">3</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(4, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">4</a></li>
+                    <li><a href="javascript:; onClick=OnPageMove(5, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);">5</a></li>
+
+
+                    <li class="prev"><img src="./imgs/btn_paging_prev02_none.png" width="36" alt="이전 10페이지"></li>
+
+
+                    <li class="e_prev"><img src="./imgs/btn_paging_prev_none.png" width="36" alt="이전 페이지"></li>
+
+
+                    <li class="e_next"><a href="javascript:; onClick=OnPageMove(2, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);" title="다음 페이지"><img src="./imgs/btn_paging_next.png" alt="다음 페이지" width="36"></a></li>
+
+
+                    <li class="next"><a href="javascript:; onClick=OnPageMove(6, &#39;/newslist/newslist/&#39;, &#39;ContentForm&#39;);" title="다음 5페이지"><img src="./imgs/btn_paging_next02.png" alt="다음 5페이지" width="36"></a></li>
+
+
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div id="l-right">
+          <div id="l-right-scroll-start" style="height: 1424px;">
+            <div id="l-right-scroll-in" class="side_bar" data-direction="up" style="position: relative; top: 0px; left: 0px;">
+
+
+              <div class="head_line">
+                <h3>이 시간 헤드라인 </h3>
+                <ul class="list">
+                  <li><a href="./view.html"> 집에 고액연금 받던 A씨 '건보료' 폭탄 맞는 사연</a></li>
+                  <li><a href="./view.html"> '미술관 품은 아파트' 들어선다는데 가격은? </a></li>
+                  <li><a href="./view.html"> 집 안 팔린단 '김상곤 부총리'에 날아든 한방</a></li>
+                  <li><a href="./view.html">공부는 어디서…" 도서관 없애는 대학들 도대체 왜?</a></li>
+                  <li><a href="./view.html"> 엑소만? 폐막식 빠진 방탄소년단 왠지 이상했는데</a></li>
+                </ul>
+              </div>
+
+
+              <div class="interctive_news">
+                <div>
+
+                  <div class="bx-wrapper" style="max-width: 21501px;">
+                    <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 333px;">
+                      <ul class="interactive_slide" style="width: 7215%; position: absolute; transition-duration: 0.7s; transform: translate3d(-893.965px, 0px, 0px);">
+
+                        <li style="float: left; list-style: none; position: relative; width: 298px;"><a href="./view.html"><img src="./imgs/spc2_1_1812_1.jpg" alt="[영상] 서울경제와 함께하는 Fun뻔 경제·금융교실 현장"></a></li>
+                        <li style="float: left; list-style: none; position: relative; width: 298px;"><a href="./view.html"><img src="./imgs/spc2_2_1805_2.jpg" alt="&quot;이 지역의 고수는 나야 나&quot; 재능을 사고 파는 플랫폼 숨고 김로빈 대표"></a></li>
+                        <li style="float: left; list-style: none; position: relative; width: 298px;"><a href="./view.html"><img src="./imgs/spc2_1_1811_1.jpg" alt="[영상] &quot;선수들 덕분에 행복했어요&quot; 평창동계올림픽 감동의 순간들"></a></li>
+                        <li style="float: left; list-style: none; position: relative; width: 298px;"><a href="./view.html"><img src="./imgs/spc2_1_1810_1.jpg" alt="[썸in이슈] 김아랑, 세월호 리본으로 제명위기(?) 역대사례 보니"></a></li>
+                        <li style="float: left; list-style: none; position: relative; width: 298px;"><a href="./view.html"><img src="./imgs/spc2_2_1774_4.jpg" alt="[카드뉴스]신기록 쏟아지는 평창…특급 빙질에 숨은 비밀 몇가지"></a></li>
+                        <li style="float: left; list-style: none; position: relative; width: 298px;"><a href="./view.html"><img src="./imgs/spc2_1_1808_1.jpg" alt="[영상] 뜻밖의 굴욕, 고백…평창동계올림픽 뜻밖의 화제 순간들"></a></li>
+                        <li style="float: left; list-style: none; position: relative; width: 298px;"><a href="./view.html"><img src="./imgs/spc2_1_1809_1.jpg" alt="[카드뉴스]피할 수 없다면 대비하라 설날 잔소리 탈출 요령법"></a></li>
+
+                      </ul>
+                    </div>
+                    <div class="bx-controls bx-has-pager">
+                      <div class="bx-pager bx-default-pager" _vimium-has-onclick-listener="">
+                        <!-- <div class="bx-pager-item"><a href="./list.html" data-slide-index="0" class="bx-pager-link" tabindex="-1">1</a></div>
+                        <div class="bx-pager-item"><a href="./list.html" data-slide-index="1" class="bx-pager-link" tabindex="-1">2</a></div>
+                        <div class="bx-pager-item"><a href="./list.html" data-slide-index="2" class="bx-pager-link" tabindex="-1">3</a></div>
+                        <div class="bx-pager-item"><a href="./list.html" data-slide-index="3" class="bx-pager-link active" tabindex="-1">4</a></div>
+                        <div class="bx-pager-item"><a href="./list.html" data-slide-index="4" class="bx-pager-link" tabindex="-1">5</a></div>
+                        <div class="bx-pager-item"><a href="./list.html" data-slide-index="5" class="bx-pager-link" tabindex="-1">6</a></div>
+                        <div class="bx-pager-item"><a href="./list.html" data-slide-index="6" class="bx-pager-link" tabindex="-1">7</a></div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <script type="text/javascript">
+              var slide;
+              var slideFlag = false;
+              $(function() {
+                interactiveSlider();
+              })
+
+              $(window).on('resize', function() {
+                _w = $('.interactive_slide').innerWidth();
+                interactiveSlider()
+              });
+
+              function interactiveSlider() {
+                _w = $('.interactive_slide').innerWidth();
+                var _num = 0;
+                if (SW <= 768) _num = 3;
+                if (SW <= 480) _num = 2;
+                if (SW > 768) _num = 1;
+
+                if (!slideFlag) {
+                  slider = $('.interactive_slide').bxSlider({
+                    speed: 700,
+                    auto: true,
+                    autoHover: true,
+                    autoControls: false,
+                    controls: false,
+                    minSlides: _num,
+                    maxSlides: _num,
+                    slideWidth: _w / _num,
+                    infiniteLoop: false,
+                    onSlideAfter: function($slideElement, x, y) {
+                      if (y == slider.getSlideCount() - 1) {
+                        setTimeout(function() { slider.goToSlide(0); }, 2000);
+                      }
+                    }
+                  });
+                } else {
+                  slider.reloadSlider({
+                    speed: 700,
+                    auto: true,
+                    autoHover: true,
+                    autoControls: false,
+                    controls: false,
+                    minSlides: _num,
+                    maxSlides: _num,
+                    slideWidth: _w / _num,
+                    infiniteLoop: false,
+                    onSlideAfter: function($slideElement, x, y) {
+                      if (y == slider.getSlideCount() - 1) {
+                        setTimeout(function() { slider.goToSlide(0); }, 2000);
+                      }
+                    }
+                  });
+                }
+                slideFlag = true;
+
+                //$('.interactive_slide').focusin(function () {
+                //	slider.stopAuto();
+                //	slider.css('transform', 'translate3d(0px, 0px, 0px)')
+                //})
+
+                $('.interactive_slide li').focusin(function() {
+                  var indexx = $(this).index();
+                  $(".interactive_slide").parent().siblings().find(".bx-pager-item").children("a").removeClass("active");
+                  $(".interactive_slide").parent().siblings().find(".bx-pager-item").eq(indexx).children("a").addClass("active");
+                });
+
+                $('.interactive_slide li').focusout(function() {
+                  slider.reloadSlider();
+                });
+
+                $(document).on('click', '.interctive_news .bx-pager-link', function() {
+                  slider.stopAuto();
+                  slider.startAuto();
+                });
+              }
+              </script>
+
+
+              <div class="best_click_zone">
+                <h3>BEST CLICK</h3>
+                <h4>Best<span>Click</span></h4>
+                <ol>
+                  <li id="li_best_1" class="best">
+                    <span class="letter">1</span>
+                    <p><a href="./view.html=recombest_GH"><span class="best_text">송승환 총감독 "폐회식에 방탄소년단도 함께 했다면 좋았을 것"</span><span class="thumb"><span><img src="./imgs/1RVV976XQS_1_s.jpg" alt="송승환 총감독 &quot;폐회식에 방탄소년단도 함께 했다면 좋았을 것&quot;"></span></span></a>
+                    </p>
+                  </li>
+                  <li id="li_best_2" class="best">
+                    <span class="letter">2</span>
+                    <p><a href="./view.html=recombest_GH"><span class="best_text">'덕수궁 돌담길 개방' 주한 영국대사, 서울시 명예시민 된다</span><span class="thumb"><span><img src="./imgs/1RVV6S3Y0S_1_s.jpg" alt="&#39;덕수궁 돌담길 개방&#39; 주한 영국대사, 서울시 명예시민 된다"></span></span></a>
+                    </p>
+                  </li>
+                  <li id="li_best_3" class="best">
+                    <span class="letter">3</span>
+                    <p><a href="./view.html=recombest_GH"><span class="best_text">[옥건 원장의 탈모 이야기-16] 이마·정수리 같이 빠지는 '설상가상형 탈모</span><span class="thumb"><span><img src="./imgs/1RVV80SKS8_7_s.jpg" alt="[옥건 원장의 탈모 이야기-16] 이마·정수리 같이 빠지는 &#39;설상가상형 탈모&#39;"></span></span></a>
+                    </p>
+                  </li>
+                  <li id="li_best_4" class="best">
+                    <span class="letter">4</span>
+                    <p><a href="./view.html=recombest_GH"><span class="best_text">방송인 전현무-한혜진 '썸에서 연인으로'</span><span class="thumb"><span><img src="./imgs/1RVV8TC0TP_2_s.jpg" alt="방송인 전현무-한혜진 &#39;썸에서 연인으로&#39;"></span></span></a>
+                    </p>
+                  </li>
+                  <li id="li_best_5" class="best">
+                    <span class="letter">5</span>
+                    <p><a href="./view.html=recombest_GH"><span class="best_text">평창올림픽으로 병역특례 받은 선수 누구누구 있나</span><span class="thumb"><span><img src="./imgs/1RVURU32LX_1_s.jpg" alt="평창올림픽으로 병역특례 받은 선수 누구누구 있나"></span></span></a>
+                    </p>
+                  </li>
+                  <li id="li_nobest_6">
+                    <span class="letter">6</span>
+                    <p><a href="./view.html=recombest_GH" class="no_img"><span class="best_text">문화재청 "성추문 하용부,직접 인간문화재 해지 신청하면 절차 진행할 것"</span></a>
+                    </p>
+                  </li>
+                  <li id="li_nobest_7">
+                    <span class="letter">7</span>
+                    <p><a href="./view.html=recombest_GH" class="no_img"><span class="best_text">"헤어짐…만남의 다른 이름일거야" 남북 단일팀 눈물의 이별</span></a>
+                    </p>
+                  </li>
+                  <li id="li_nobest_8">
+                    <span class="letter">8</span>
+                    <p><a href="./view.html=recombest_GH" class="no_img"><span class="best_text">"골 넣으면 코치가 하이파이브…잊지 못할 추억 안겨줬어요"</span></a>
+                    </p>
+                  </li>
+                  <li id="li_nobest_9">
+                    <span class="letter">9</span>
+                    <p><a href="./view.html=recombest_GH" class="no_img"><span class="best_text">'미투' 열풍 속 '성추행' 전력 감태준 시인도 차기 시인협회장 사퇴</span></a>
+                    </p>
+                  </li>
+                  <li id="li_nobest_10">
+                    <span class="letter">10</span>
+                    <p><a href="./view.html=recombest_GH" class="no_img"><span class="best_text">'이윤택 성폭력 폭로' 김수희 "미투, 韓사회 만연한 문제에 예술계가 뜨겁</span></a>
+                    </p>
+                  </li>
+                </ol>
+
+                <p id="BestNewsMoreLine">
+                  <a class="m_down">5개 기사 더보기 <img src="./imgs/btn_more_best.png" alt="더보기" width="11"></a>
+                  <a class="m_up">5개 기사 접기 <img src="./imgs/btn_more_best02.png" alt="접기" width="11"></a>
+                </p>
+              </div>
+
+              <script type="text/javascript">
+              $('#BestNewsMoreLine > a').click(function() {
+                if ($(this).hasClass('m_down')) {
+                  $('#BestNewsMoreLine').addClass('open');
+                  $("[id^='li_nobest_']").show();
+                } else {
+                  $('#BestNewsMoreLine').removeClass('open');
+                  $("[id^='li_nobest_']").hide();
+                }
+              });
+              </script>
+
+
+              <link href="./css/swiper.3.4.1.min.css" rel="stylesheet">
+              <script src="./js/swiper.3.4.1.min.js"></script>
+
+              <div class="newest_news">
+                <h3>최신뉴스</h3>
+                <div class="tab_cover">
+                  <div class="section_tab">
+
+
+                    <div class="cate swiper-container">
+                      <ul class="swiper-wrapper" style="width: 709.5px; left: 0px;">
+                        <li class="swiper-slide active" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);">전체</a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);">증권</a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);">부동산</a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);" class="textover"><span>경제</span><span class="dot"> · </span><span>금융</span></a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);">산업</a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);">정치</a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);">사회</a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);">국제</a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);" class="textover"><span>오피</span><span>니언</span></a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);" class="textover2"><span>문화</span><span class="dot"> · </span><span>스포츠</span></a></li>
+                        <li class="swiper-slide" _vimium-has-onclick-listener="" style="width: 64.5px;"><a href="javascript:void(0);" class="textover"><span>서경</span><span>스타</span></a></li>
+                      </ul>
+                    </div>
+
+
+                    <p class="btn_wrap">
+                      <a href="javascript:;" class="button-next s_next" tabindex="-1"><img src="./imgs/btn_tab_next.png" width="8" alt="다음"></a>
+                      <a href="javascript:;" class="button-prev s_prev" tabindex="-1"><img src="./imgs/btn_tab_prev.png" width="8" alt="이전"></a>
+                    </p>
+                  </div>
+
+                  <div class="listwrapper">
+                    <div>
+                      <ul class="section_tab_data" style="width: 2838px; left: 0px;">
+
+
+                        <li id="list1" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>전체</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html">공식입장] '성추문' 오달수, 끝내 '나의 아저씨' 하차 확정</a></li>
+                              <li style="width: 258px;"><a href="./view.html">, ‘디젤차량 운행금지’ 판결··“환경단체 손들어줘”</a></li>
+                              <li style="width: 258px;"><a href="./view.html">, 후원금 모금 중단…“초심 잃지 않기 위해 마음만 받겠다“</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> “박근혜 징역 30년, 지은 죄에 비해 턱없이 부족한 구형”</a></li>
+                              <li style="width: 258px;"><a href="./view.html">, 유증 마무리..자기자본 8조시대 열었다</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list2" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>증권</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html">, 유증 마무리..자기자본 8조시대 열었다</a></li>
+                              <li style="width: 258px;"><a href="./view.html">사진]마지막 금통위 주재하는 이주열</a></li>
+                              <li style="width: 258px;"><a href="./view.html">표]아시아 주요 증시 동향(2월 27일)</a></li>
+                              <li style="width: 258px;"><a href="./view.html">표]투자주체별 매매동향(2월 27일-최종치)</a></li>
+                              <li style="width: 258px;"><a href="./view.html">표]코스닥 기관·외국인·개인 순매수·도 상위종목(2월 27일-최종치)</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list3" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>부동산</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html"> 주택인허가 전년比 5% 감소</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> '미술관 품은 아파트' 들어선다는데 가격은? </a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 앞 낙원·돈의· 익선동 일대, 역사·문화 담은 명소로 바뀐다</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 재건축 사업 지연되자 전세 매물 급소진 반짝 인기</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 대한주택건설협회장 "후분양제 시행땐 중견·중소 건설사 퇴출될 것"</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list4" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>경제 · 금융</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html">서울경제TV][투데이포커스] DSR 도입, 대출 문턱 얼마나 높아지나</a></li>
+                              <li style="width: 258px;"><a href="./view.html"></a></li>
+                              <li style="width: 258px;"><a href="./view.html">서울경제TV] 한미금리 역전돼도 자금유출 가능성 크지 않아</a></li>
+                              <li style="width: 258px;"><a href="./view.html">, 사회공헌부문 보건복지부 장관상 수상</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 법정관리 위기</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list5" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>산업</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html">서울경제TV] 여야, 근로시간 주당 52시간으로 최종 합의</a></li>
+                              <li style="width: 258px;"><a href="./view.html">, 다이노나와 면역항암항체 기술도입 계약</a></li>
+                              <li style="width: 258px;"><a href="./view.html">인사] 한국무역협회</a></li>
+                              <li style="width: 258px;"><a href="./view.html">MWC2018] AR·5G시대의 개막…MWC 2018 빛낸 핵심 기술은?</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 고소득자 건보료 오른다</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list6" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>정치</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html"> “박근혜 징역 30년, 지은 죄에 비해 턱없이 부족한 구형”</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 청와대, 제2롯데월드 여론관리 지침까지…“경기침체 분위기 활용”</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 대표단, 내달 7일 경의선 육로로 방남</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 집 안 팔린단 '김상곤 부총리'에 날아든 한방</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 근로단축…기업들 "해외 가야하나" 한숨</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list7" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>사회</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html">뉴스터치]올해부터 민방위 훈련 4회로 확대</a></li>
+                              <li style="width: 258px;"><a href="./view.html">뉴스터치] 소방청, 소방공무원 정신건강 전수조사</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 서남권 안전체험관 들어선다</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 심야버스,  노선 5∼10개 추가</a></li>
+                              <li style="width: 258px;"><a href="./view.html">뉴스터치]성북,' 석관황금시장' 이름 바꾸고 새단장</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list8" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>국제</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html">, ‘디젤차량 운행금지’ 판결··“환경단체 손들어줘”</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 마크롱’, 미국 국빈방문 “트럼프 취임 후 처음”</a></li>
+                              <li style="width: 258px;"><a href="./view.html">習, 장쩌민 반대에도 임기제한 삭제 강행"</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 케이블 업체 ‘컴캐스트’··“英 위성방송 ‘스카이’ 인수가로 33조원 불러”</a></li>
+                              <li style="width: 258px;"><a href="./view.html">글로벌 뉴스메이커] G2 무역전쟁 휴전 시킬까…시험대 오른 시황제 책사</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list9" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>오피니언</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html">부고] 김영애 LF 숙녀부문장 전무 모친상외</a></li>
+                              <li style="width: 258px;"><a href="./view.html">인사] 국무조정실 외</a></li>
+                              <li style="width: 258px;"><a href="./view.html">사설] 한국GM 외투지역 지정 시기상조다</a></li>
+                              <li style="width: 258px;"><a href="./view.html">사설]손경식 새 경총 회장에 맡겨진 무거운 책무</a></li>
+                              <li style="width: 258px;"><a href="./view.html">사설]근로시간 줄이면서 생산성 향상 논의는  왜 없나</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list10" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>문화 · 스포츠</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html">, 후원금 모금 중단…“초심 잃지 않기 위해 마음만 받겠다“</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 성추행 폭로 또 나와...'천만배우' 입지 흔들</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 이승비 “이윤택 성범죄 대상? 어리고 발언권 없던 여성들”</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 몸신이다’ 하루 145명 돌연사?! ‘혈관 4적’을 잡아라!</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 평창 흑염소 목장 잔소리꾼 아버지와 초보 아들의 전쟁</a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li id="list12" class="listN" style="width: 258px;">
+                          <div>
+                            <h5>서경스타</h5>
+                            <ul class="list">
+                              <li style="width: 258px;"><a href="./view.html">공식입장] '성추문' 오달수, 끝내 '나의 아저씨' 하차 확정</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 의혹’ 오달수, tvN ‘나의 아저씨’ 하차…“협의 거쳐 결정”</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 임하룡 “배우 시작 계기? 하고 있던 프로그램들 없어져서”</a></li>
+                              <li style="width: 258px;"><a href="./view.html"> 정채연 “광고 촬영 전날에도 소주 반병…붓기 쏙 빠져”</a></li>
+                              <li style="width: 258px;"><a href="./view.html">공식입장] 오달수 측, 성추행 피해자 엄지영 실명 보도 “확인 할 시간 필요...곧 입장발표 할 것”</a></li>
+                            </ul>
+                          </div>
+                        </li>
+
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <a href="http://www.sedaily.com/News/NewsAll" class="more"><img src="./imgs/btn_more.png" alt="더보기" width="14"></a>
+              </div>
+
+
+              <script type="text/javascript">
+              //$(".section_tab a").on("click", function () {
+              //	$(this).parents(".section_tab").find("li").removeClass("on");
+              //	$(this).parents(".section_tab").siblings(".tab_cont").hide();
+              //	$("#" + $(this).attr("data-id")).show();
+              //	$(this).parent().addClass("on");
+              //});
+              // 변수
+              var $menuUl = $(".cate ul");
+              var $menuli = $(".cate ul li");
+              var $list = $(".section_tab_data");
+              var menuLeft = 0; // menu ul 의 left=0 초기 값.
+              var screenli = 4; //화면에 나오는$menuli의 갯수.
+              var menuSpeed = 300;
+              var listSpeed = 350;
+              var timer = 0;
+              var cateWid = $(".cate").width();
+              var cateliWid = cateWid / screenli
+
+              $(document).ready(function() {
+                $menuli.css("width", cateliWid);
+                $menuUl.css("width", cateliWid * ($menuli.length));
+                $(".section_tab_data li").css("width", cateWid);
+                $list.css("width", cateWid * ($menuli.length));
+                //left 초기값.
+                $(".cate ul li:first").addClass("active");
+                $list.css("left", menuLeft);
+                //$menuUl.css("left", menuLeft);
+
+                $(window).resize(function(e) {
+                  e.preventDefault();
+                  cateWid = $(".cate").width();
+                  cateliWid = cateWid / screenli
+                  $menuli.css("width", cateliWid);
+                  $menuUl.css("width", cateliWid * ($menuli.length));
+                  $(".section_tab_data li").css("width", cateWid);
+                  $list.css("width", cateWid * ($menuli.length));
+                  $menuli.removeClass("active");
+                  $(".cate ul li:first").addClass("active");
+                  $list.css("left", menuLeft);
+                  $menuUl.css("left", menuLeft);
+                });
+
+                //버튼조작 start
+                $menuli.click(function() {
+                  CustomSlideTo($(this).index());
+                });
+                //next
+                $(".s_next").bind("click", function() {
+                  if (CustomSlideIndex < $menuli.length - 1) {
+                    CustomSlideIndex++;
+                    CustomSlideTo(CustomSlideIndex)
+                  }
+                });
+                $(".s_prev").bind("click", function() {
+                  if (CustomSlideIndex > 0) {
+                    CustomSlideIndex--;
+                    CustomSlideTo(CustomSlideIndex)
+                  }
+                });
+                //focus : tabIndex
+                $menuli.focusin(function() {
+                  for (var m = 0; m < $menuli.length; m++) {
+                    var tabindex = (m * 6) + 1;
+                    //menu
+                    $menuli.eq(m).children("a").attr('tabindex', tabindex);
+                    //list
+                    for (var i = 1; i < 6; i++) {
+                      $(".listN").eq(m).find("ul").children("li").eq(i - 1).children("a").attr('tabindex', i + tabindex);
+                    }
+                  }
+
+                  CustomSlideTo($(this).index());
+                });
+
+                $(".section_tab_data").find(".list").last().find("li").last().focusin(function() {
+                  $menuli.children("a").removeAttr('tabindex');
+                  $(".listN").find("ul").children("li").children("a").removeAttr('tabindex');
+                });
+
+                if ($(window).width() <= 900) {
+                  InitSilde()
+                }
+              });
+
+              var section_slide;
+              var CustomSlideIndex = 0;
+
+              function InitSilde() {
+                section_slide = new Swiper('.cate', {
+                  freeMode: true,
+                  slidesPerView: 4
+                });
+              }
+
+              function CustomSlideTo(index) {
+                CustomSlideIndex = index;
+                var delay = Math.abs(timer - $.now());
+                var leftCheck = -(CustomSlideIndex * cateliWid); //움직이는 left값
+                var range = -($menuli.length - screenli) * cateliWid; //기준이 될 left 
+                if (delay > listSpeed) {
+                  timer = $.now();
+                  if (section_slide == undefined) {
+                    if (leftCheck < range) {
+                      $menuUl.animate({
+                        "left": range
+                      }, menuSpeed);
+                    } else {
+                      $menuUl.animate({
+                        "left": leftCheck
+                      }, menuSpeed);
+                    }
+                  } else {
+                    section_slide.slideTo(CustomSlideIndex, menuSpeed, false);
+                  }
+
+                  $menuli.removeClass("active");
+                  $menuli.eq(CustomSlideIndex).addClass("active");
+                  $list.animate({
+                    "left": -(CustomSlideIndex * cateWid)
+                  }, listSpeed);
+
+                }
+              }
+              </script>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--[if gt IE 7 ]><!-->
+    <script type="text/javascript">
+    jQuery(document).ready(
+      function() {
+        onScrollDirection();
+        onScrollAdjustEndLine("#l-left-scroll-start", "#contents-article-list", "#l-left-scroll-in");
+        onScrollAdjustEndLine("#l-right-scroll-start", "#contents-article-list", "#l-right-scroll-in");
+      }
+    );
+    </script>
+    <!--<![endif]-->
+
+    <script type="text/javascript">
+    $(".news_list li img").error(function() {
+
+      var randomNumber = Math.floor(Math.random() * (10) + 1);
+      if (randomNumber <= 0 || randomNumber > 10) {
+        randomNumber = 1;
+      }
+      $(this).unbind("error").attr("src", "http://img.sedaily.com/Web/Rsv/s" + randomNumber + ".jpg");
+    });
+    </script>
+
+
+    <footer id="footer">
+
+
+      <p class="btn_fix" style="z-index: 1000000; right: 198.504px;">
+
+
+        <a href="javascript:GoToTop();" class="top"><img src="./imgs/btn_top_off.png" alt="위로" width="50"></a>
+      </p>
+      <div class="menu_cover">
+        <ul class="menu_list m_layout_bl">
+          <li><a href="http://www.sedaily.com/Info/Company/Intro">회사소개</a></li>
+          <li><a href="http://www.sedaily.com/Info/Company/NPaperInfo">구독안내</a></li>
+          <li><a href="http://www.sedaily.com/Info/Company/AdInfo">광고안내</a></li>
+          <li><a href="http://www.sedaily.com/Info/Company/Grievance">고충처리인</a></li>
+          <li><strong><a href="http://www.sedaily.com/Info/Company/SvcPrivate">개인정보취급방침</a></strong></li>
+          <li><a href="http://www.sedaily.com/Info/Company/SvcProvision">이용약관</a></li>
+          <li><a href="http://www.sedaily.com/Info/Company/SvcTeenagers">청소년 보호정책</a></li>
+          <li class="last"><a href="http://www.sedaily.com/Info/Board/List?n=1">공지사항</a></li>
+        </ul>
+        <div class="share_cover">
+          <p>서울경제를 Follow 하세요</p>
+          <ul class="share_list m_layout_bl">
+            <li><a href="https://www.facebook.com/sedailythumb/" target="_blank"><img src="./imgs/sns_f02.png" alt="페이스북"></a></li>
+            <li><a href="https://www.youtube.com/channel/UCIh431O7x00rZke3oNBuRRA/" target="_blank"><img src="./imgs/sns_y02.png" alt="유투브"></a></li>
+            <li><a href="https://www.instagram.com/sedaily_thumb/" target="_blank"><img src="./imgs/sns_i02.png" alt="인스타그램"></a></li>
+            <li><a id="btnBottomNewsLetter" href="javascript:GoToRegNewsLetter();"><img src="./imgs/sns_m02.png" alt="뉴스레터 신청"></a></li>
+          </ul>
+
+        </div>
+      </div>
+
+      <form id="FooterMailForm" name="FooterMailForm" method="post" action="http://www.sedaily.com/News/NewsView/MailWrite" target="hframe">
+        <div class="subscribe_cover">
+          <dl class="email">
+            <dt>뉴스레터 신청 : </dt>
+            <dd>
+              <p>
+                <input type="text" id="FooterEmail" name="Email" class="val[req,custom[email]]" placeholder="Enter your email address" autocomplete="off" title="이메일 입력"><a id="FooterEmailWrite" href="javascript:RegEmail()">확인</a></p>
+            </dd>
+          </dl>
+
+          <div class="family_site">
+            <a href="javascript:OpenFamilySite()" class="family_go">관련사이트<span><span>보기</span></span></a>
+            <ul style="display: none;">
+              <li _vimium-has-onclick-listener=""><a href="http://www.koreatimes.com/" target="_blank">미주한국일보</a></li>
+              <li _vimium-has-onclick-listener=""><a href="http://www.sentv.co.kr/" target="_blank">서울경제TV</a></li>
+              <li _vimium-has-onclick-listener=""><a href="http://golf.sedaily.com/" target="_blank">서경Golf</a></li>
+              <li _vimium-has-onclick-listener=""><a href="http://decenter.sedaily.com/" target="_blank">디센터</a></li>
+              <li _vimium-has-onclick-listener=""><a href="http://www.sedaily.com/Beri/Content/Vision">백상경제연구원</a></li>
+              <li _vimium-has-onclick-listener=""><a href="http://sci.sedaily.com/" target="_blank">이달의 과학기술인상</a></li>
+              <li _vimium-has-onclick-listener=""><a href="http://www.seoulforum.kr/" target="_blank">서울포럼2017</a></li>
+            </ul>
+          </div>
+          <p><a id="FooterTop" href="javascript:GoToTop();">TOP</a></p>
+        </div>
+      </form>
+      <div class="menu_cover mobile">
+        <ul class="menu_list m_con_bl">
+          <li><a href="http://www.sedaily.com/Info/Company/Intro">회사소개</a></li>
+          <li><strong><a href="http://www.sedaily.com/Info/Company/SvcPrivate">개인정보취급방침</a></strong></li>
+          <li><a href="http://www.sedaily.com/Info/Company/SvcProvision">이용약관</a></li>
+          <li class="last"><a href="http://www.sedaily.com/Info/Company/SvcTeenagers">청소년 보호정책</a></li>
+        </ul>
+      </div>
+      <div class="address_cover">
+        <h2 class="m_layout_b"><img src="./imgs/f_logo.gif" alt="서울경제"></h2>
+        <div>
+          <address class="m_layout_b">
+            <span>서울시 서대문구 통일로 81 NH농협생명빌딩 9층, 13층</span>
+            <span>등록번호 : 서울 가 00224</span>
+            <span>등록일자 : 1988.05.13</span>
+            <span>발행 ·편집인 : 이종환</span>
+            <span>인터넷신문등록번호 : 서울 아04065</span>
+            <span>등록일자 : 2016.04.26</span>
+            <span class="last">발행일자 : 2016.04.01</span>
+          </address>
+          <address class="m_layout_b"><span>서울경제의 모든 콘텐트는 저작권법의 보호를 받는 바, 무단 전재·복사·배포 등은 법적 제재를 받을 수 있습니다.</span><span class="last">청소년보호책임자 : 손동영</span></address>
+          <p class="letter">Copyright ⓒ Sedaily, All right reserved ☏ 02) 724-8600</p>
+        </div>
+      </div>
+    </footer>
+
+  </section>
+  <ins class="adsbygoogle" data-adsbygoogle-status="done" style="display: none;">
+    <ins id="aswift_0_expand" style="display:inline-table;border:none;height:NaNpx;margin:0;padding:0;position:relative;visibility:visible;width:NaNpx;background-color:transparent;">
+      <ins id="aswift_0_anchor" style="display:block;border:none;height:NaNpx;margin:0;padding:0;position:relative;visibility:visible;width:NaNpx;background-color:transparent;">
+        <iframe frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:NaNpx;height:NaNpx;" src="./iframes/saved_resource.html"></iframe>
+      </ins>
+    </ins>
+  </ins>
+  <iframe name="hframe" id="hframe" src="./iframes/saved_resource(1).html" width="0" height="0" frameborder="0" scrolling="no" style="display:none;" title="내용없음"></iframe>
+
+  <script type="text/javascript">
+  $("input[id=FooterEmail]").keypress(function(event) {
+    if (event.which == 13) {
+      $("#FooterEmailWrite").click();
+      return false;
+    }
+  });
+
+  function RegEmail() {
+    $("#FooterMailForm").validationEngine();
+    if ($("#FooterMailForm").validationEngine('val')) {
+      $("#FooterMailForm").submit();
+    }
+  }
+
+  function GoToTop() {
+    console.log("asdf")
+    $('html, body').animate({ scrollTop: 0 });
+  }
+
+  function GoToRegNewsLetter() {
+    var $target = $('html,body');
+    $target.animate({ scrollTop: $target.height() }, 1000);
+    $('#FooterEmail').focus();
+  }
+
+  function NewsLetterConfirm(Email) {
+    jAjax('NewsLetterPopAjax', '/News/NewsView/NewsLetterConfirmAjax?Email=' + Email, '', 'get');
+  }
+
+  $(document).ready(function() {
+    // family_site
+    $(".family_site ul").hide();
+    $(".family_go").children("span").children("span").removeClass("reverse");
+    $(".family_site ul li").click(function() {
+      $(".family_site ul").slideUp();
+    });
+
+    $(".family_site ul li").focusout(function() {
+      if ($(this).index() == $(".family_site ul li").length - 1) {
+        OpenFamilySite()
+      }
+    });
+  });
+
+  function OpenFamilySite() {
+    $(".family_site ul").slideToggle();
+    $(".family_site ul").show();
+    $(".family_go").children("span").children("span").toggleClass("reverse");
+  }
+
+  function OpenSedNow() {
+    if ($("#divSedNow").css("display") != "none") {
+      $("#divSedNow").hide();
+    } else {
+      jAjax("divSedNow", "/NowEvent/List");
+      $("#divSedNow").show();
+    }
+  }
+  </script>
+
+  <script src="./js/google.js"></script>
+
+
+  <!-- <div id="__fanyixia_content">
+    <div data-reactroot="" class="__icon" title="点击翻译"><img src="chrome-extension://fapgabkkfcaejckbfmfcdgnfefbmlion/static/media/icon.svg" alt="icon" width="16" height="16"></div>
+  </div> -->
+</body>
+
+</html>
