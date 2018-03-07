@@ -2446,7 +2446,7 @@
         </div>
         <div class="bottom_news" style="margin-top: 20px;">
           <div class="left_cont">
-            <div class="headline_list">
+            <div class="headline_list" id="headlineList1">
               <a href="http://www.sedaily.com/NewsView/1RVV95FYPR">
                 <dl>
                   <dt>최저임금에 근로단축…기업들 "해외 가야하나" 한숨</dt>
@@ -3230,6 +3230,15 @@
             </div>
           </div>
         </div>
+        <script>
+        $(function() {
+          $('#headlineList1').liMarquee({direction: 'up', scrollamount: 30}).hover(function(){
+            $('#headlineList1').liMarquee('pause');
+          }, function() {
+            $('#headlineList1').liMarquee('play'); 
+          })
+        })
+        </script>
         <!--Cube END-->
         <link href="./css/newsman_onlymain.css" rel="stylesheet" type="text/css">
         <link href="./css/swiper.3.4.1.min.css" rel="stylesheet" type="text/css">
@@ -4047,40 +4056,40 @@
         </div> -->
         <div id="footer-scroll" class="rh-lantern str_wrap">
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
           <a href="#">
-            <img src="../imgs/demo-logo.gif" alt="" />
+            <img src="./imgs/demo-logo.gif" alt="" />
           </a>
         </div>
         <script>

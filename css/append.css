@@ -3,6 +3,10 @@
   margin-top: 20px;
 }
 
+.main_top_banner img {
+  width: 100%;
+}
+
 .rh-lantern a {
   margin: 0 10px;
   text-align: center;
@@ -11,6 +15,7 @@
   display: inline-block;
   vertical-align: top;
 }
+
 
 
 /*Plugin CSS*/
