@@ -3233,9 +3233,9 @@
         <script>
         $(function() {
           $('#headlineList1').liMarquee({direction: 'up', scrollamount: 30}).hover(function(){
-            $('#headlineList1').liMarquee('pause');
+            $('#headlineList1').addClass('scrollable').liMarquee('pause');
           }, function() {
-            $('#headlineList1').liMarquee('play'); 
+            $('#headlineList1').removeClass('scrollable').liMarquee('play'); 
           })
         })
         </script>

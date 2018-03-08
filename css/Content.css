@@ -279,6 +279,7 @@ _:-ms-fullscreen, :root .main_container .headline_list a dl dt .tag { line-heigh
 .main_container .bottom_news .right_cont .today_issue h3{display:none;}
 /*photo옆 newslist*/
 .main_container .headline_list{text-align:left;height: 636px; padding: 10px; width: auto;background: none !important;}
+.main_container .headline_list.scrollable {overflow-y: auto;}
 /*.main_container .headline_list ..str_wrap{width: auto;}*/
 .main_container .headline_list .str_move{left: 10px; right: 10px;width: auto;white-space: normal;}
 .main_container .headline_list .str_move .str_move{left: 0;right: 0;}
